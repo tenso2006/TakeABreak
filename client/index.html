@@ -1,4 +1,4 @@
-<html ng-app="myApp">
+<html>
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
@@ -14,16 +14,8 @@
 
   <title>Take a Break</title>
 </head>
-<body>
-  <div>
-    <ul class="nav nav-pills">
-      <li role="presentation" class="active"><a href="#/home">Home</a></li>
-      <li role="presentation"><a href="/" onclick="signOut();">Logout</a></li>
-    </ul>
-  </div>
-  <div align = "center">
-    <h1>Take a Break</h1>
-  </div>
+<body ng-app="myApp">
+
 
   <div align = "center" ng-view style = "margin: 5%"></div>
 
@@ -40,7 +32,8 @@
   <!-- services -->
   <script src="/services/services.js"></script>
   <!-- constrollers -->
-  <script src="/controllers/home.js"></script>
+  <script src="/home/home.js"></script>
+  <script src="/history/historyController.js"></script>
 
 
   <script>
