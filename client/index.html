@@ -5,6 +5,7 @@
   <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <Link rel="stylesheet" href="./style.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <meta name="google-signin-scope" content="profile email">
@@ -15,14 +16,17 @@
 
     <!-- api js: core JS library -->
     <script src="https://apis.google.com/js/platform.js"></script>
+    <!-- fuck yeah fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
   </head>
   <body>
-    <div class= "jumbotron" align = "center" >
+    <div>
 <!--     <div align = "center"> -->
-      <h2>Sign In</h2>
+      <h1 align="center" id="login-title">Take a Break</h1>
 
-      <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
     </div>
+    <img id="login-splash" src="./img/zen3.png">
+    <div class="g-signin2" data-onsuccess="onSignIn" align="center"></div>
 
     <script>
       function onSignIn(googleUser) {
