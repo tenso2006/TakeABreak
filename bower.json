@@ -1,0 +1,25 @@
+{
+  "name": "Take a Break",
+  "homepage": "https://github.com/ImprobProbs/TakeABreak",
+  "authors": [
+    "Derek Young <dthomasy@gmail.com>",
+    "David Chang",
+    "Tenzin Sonam"
+  ],
+  "description": "Stay healthy and productive and get the most out of your work day.",
+  "main": "server.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.2",
+    "angular-route": "^1.6.2",
+    "axios": "^0.15.3",
+    "jquery": "^3.1.1"
+  }
+}
