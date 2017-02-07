@@ -1,7 +1,6 @@
 (function() {
   const HOME = angular.module('zen.home', []);
-  HOME.controller('HomeCtrl', function($scope, $location, aBreak) {
-    console.log('home control initialized')
+  HOME.controller('HomeCtrl', function($scope, $location, GetBreak) {
     $scope.break = {};
     $scope.physicalBreakCount = {Yes: 0, No: 0};
     $scope.mentalBreakCount = {Yes: 0, No: 0};
@@ -10,11 +9,11 @@
     $scope.physicalPercentString = $scope.physicalPercent.Yes;
     $scope.mentalPercentString = $scope.mentalPercent.Yes;
 
-    aBreak.getBreak().then(function(someBreak) {
-      console.log('Home.js - Get a Break: ', someBreak);
-      $scope.break.type = someBreak.type;
-      $scope.break.title = someBreak.title;
-      $scope.break.description = someBreak.description;
+    GetBreak.get().then(function(Break) {
+      console.log('Home.js - Get a Break: ', Break);
+      $scope.break.type = Break.type;
+      $scope.break.title = Break.title;
+      $scope.break.description = Break.description;
     });
 
     $scope.completeBreak = function(breakType) {

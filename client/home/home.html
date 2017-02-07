@@ -1,13 +1,20 @@
 <div ng-controller='HomeCtrl'>
-  <h2>Welcome back, here is your Break!</h2>
+  <header id="homeHeader">
+    <ul class="nav nav-pills">
+      <li role="presentation" class="active"><a href="#/home">Home</a></li>
+      <li role="presentation"><a href="/" onclick="signOut();">Logout</a></li>
+    </ul>
+    <div class="header">
+      <h1>ZenBro</h1>
+      <h3>Welcome back ZenCuz!</h3>
+    </div>
+  </header>
+
   <div id="time">
     <h1>Time</h1>
   </div>
-  <div align = "center">
-    <h1>Take a Break</h1>
-  </div>
 
-  <div align = "center" style = "margin: 5%"></div>
+  <div align="center"></div>
   <div class="jumbotron">
     <h2 ng-model="breakType">{{break.type}}</h2>
     <h1>{{break.title}}</h1>
@@ -18,12 +25,6 @@
     <p>
       <a class="btn btn-primary btn-lg" role="button" ng-click="notCompleteBreak($breakType)">Skipped</a>
     </p>
-  </div>
-  <div>
-    <ul class="nav nav-pills">
-      <li role="presentation" class="active"><a href="#/home">Home</a></li>
-      <li role="presentation"><a href="/" onclick="signOut();">Logout</a></li>
-    </ul>
   </div>
 </div>
 <!--   <div id="completed">

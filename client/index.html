@@ -1,51 +1,51 @@
 <html>
-<head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <Link rel="stylesheet" href="style.css">
+    <meta name="google-signin-scope" content="profile email">
+    <!-- placement of clientID here to enable access to Google sign-in API features -->
+    <meta name="google-signin-client_id" content="615892834166-ivohjnsuejg5llvsn8khqcqher5qfbpm.apps.googleusercontent.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta name="google-signin-scope" content="profile email">
-  <!-- placement of clientID here to enable access to Google sign-in API features -->
-  <meta name="google-signin-client_id" content="615892834166-ivohjnsuejg5llvsn8khqcqher5qfbpm.apps.googleusercontent.com">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- api js: core JS library -->
+    <script src="https://apis.google.com/js/platform.js"></script>
 
-  <!-- api js: core JS library -->
-  <script src="https://apis.google.com/js/platform.js"></script>
+    <title>Take a Break</title>
+  </head>
 
-  <title>Take a Break</title>
-</head>
+  <body ng-app="zen">
+    <div align = "center" ng-view></div>
 
-<body ng-app="zen">
-  <div align = "center" ng-view style = "margin: 5%"></div>
+    <!-- cdns -->
+    <!-- TODO Change to minified js files before push to prod-->
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
+    <script src="lib/axios/dist/axios.js"></script>
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-  <!-- cdns -->
-  <!-- TODO Change to minified js files before push to prod-->
-  <script src="lib/angular/angular.js"></script>
-  <script src="lib/angular-route/angular-route.js"></script>
-  <script src="lib/axios/dist/axios.js"></script>
-  <script src="lib/jquery/dist/jquery.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- services -->
+    <script src="/services/services.js"></script>
 
-  <!-- services -->
-  <script src="/services/services.js"></script>
+    <!-- constrollers -->
+    <script src="/home/home.js"></script>
+    <script src="/history/history.js"></script>
 
-  <!-- constrollers -->
-  <script src="/home/home.js"></script>
-  <script src="/history/history.js"></script>
+    <!-- app module -->
+    <script src="app.js"></script>
 
-  <!-- app module -->
-  <script src="app.js"></script>
-
-  <script>
-    gapi.load('auth2', function(){
-        gapi.auth2.init();
-      });
-
-    function signOut() {
-        var auth2 = gapi.auth2.getAuthInstance();
-        auth2.signOut().then(function () {
-          console.log('User signed out.');
+    <script>
+      gapi.load('auth2', function(){
+          gapi.auth2.init();
         });
-      }
-  </script>
-</body>
+
+      function signOut() {
+          var auth2 = gapi.auth2.getAuthInstance();
+          auth2.signOut().then(function () {
+            console.log('User signed out.');
+          });
+        }
+    </script>
+  </body>
 </html>
