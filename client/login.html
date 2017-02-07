@@ -1,0 +1,90 @@
+<!-- O auth client ID -->
+<!-- 615892834166-ivohjnsuejg5llvsn8khqcqher5qfbpm.apps.googleusercontent.com -->
+
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <Link rel="stylesheet" href="./style.css">
+
+    <!-- placement of clientID here to enable access to Google sign-in API features -->
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="615892834166-ivohjnsuejg5llvsn8khqcqher5qfbpm.apps.googleusercontent.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- api js: core JS library -->
+    <script src="https://apis.google.com/js/platform.js"></script>
+    <!-- fuck yeah fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+  </head>
+  <body>
+    <div>
+      <h1 align="center" id="login-title">Take a Break</h1>
+    </div>
+    <img id="login-splash" src="./img/zen3.png">
+    <div class="g-signin2" data-onsuccess="onSignIn" align="center"></div>
+
+    <script src="lib/axios/dist/axios.js"></script>
+    <script>
+      function onSignIn(googleUser) {
+        // Useful data for your client-side scripts:
+        var profile = googleUser.getBasicProfile();
+        // profile gets profile of user. We can create a user object with the following info:
+
+        // console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+        // console.log('Full Name: ' + profile.getName());
+        // console.log('Given Name: ' + profile.getGivenName());
+        // console.log('Family Name: ' + profile.getFamilyName());
+        // console.log("Image URL: " + profile.getImageUrl());
+        // console.log("Email: " + profile.getEmail());
+
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        console.log('ID token is what we send to back-end');
+        console.log('ID Token: ' + id_token);
+        var url = '/api/users/' + profile.getEmail();
+        var userRoute = '/api/users';
+        var user = {
+          name: profile.getName(),
+          email: profile.getEmail(),
+        };
+        if (id_token) {
+          // Upon Successful Google Auth - AJAX Calls
+          axios.get(url)
+          .then(function(data) {
+            console.log('GET data passed is: ', data);
+            // check if User Email Account exists in DB
+            if (data) {
+              return window.location = 'index.html';
+            }
+
+            axios.post(userRoute, {
+              data: user
+            })
+            .then(function() {
+              window.location = 'index.html';
+            })
+            .catch(function(err) {
+              console.log(err);
+            });
+          })
+          .catch(function(err) {
+            console.log(err);
+          });
+        } // end of if id_token
+      };
+
+      gapi.load('auth2', function() {
+        gapi.auth2.init();
+      });
+
+      function signOut() {
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function() {
+          console.log('User signed out.');
+        });
+      };
+
+    </script>
+  </body>
+</html>
