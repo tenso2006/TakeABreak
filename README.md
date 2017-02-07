@@ -5,6 +5,7 @@ A web platform to send friendly reminders to take breaks, increase productivity,
 ## Team
 
   - __Product Owner__: Derek Young
+  - __Scrum Master__: Tenzin Sonam
   - __Development Team Members__: David Chang
 
 ## Table of Contents
