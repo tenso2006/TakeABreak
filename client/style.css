@@ -1,25 +1,43 @@
 body {
-  background: beige;
+  box-sizing: border-box;
 }
 
 h1, h2, h3, h4, p {
   margin: 0;
 }
 
-#homeHeader {
-  background-color: #fed587;
+.jumbotron {
+  margin-bottom: 0;
 }
 
-.nav, .header {
-
-}
-
-.nav {
-  float: right;
+.navbar {
+  margin-bottom: 0;
 }
 
 .header {
+  padding: 40px;
+  background-color: #fed587;
   text-align: center;
+}
+
+#home-container {
+  height: 400px;
+}
+
+#time, #break {
+  float: left;
+  width: 50%;
+  height: 100%;
+}
+
+#time {
+  background: beige;
+  padding: 40px;
+  float: left;
+}
+
+#graph {
+  background-color: white;
 }
 
 .clearfix:after {
