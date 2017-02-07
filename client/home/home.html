@@ -3,6 +3,11 @@
   <!-- <div id="time">
     <h1>Time</h1>
   </div> -->
+  <div align = "center">
+    <h1>Take a Break</h1>
+  </div>
+
+  <div align = "center" ng-view style = "margin: 5%"></div>
   <div class="jumbotron">
     <h2 ng-model="breakType">{{break.type}}</h2>
     <h1>{{break.title}}</h1>
@@ -14,7 +19,13 @@
       <a class="btn btn-primary btn-lg" role="button" ng-click="notCompleteBreak($breakType)">Skipped</a>
     </p>
   </div>
-  <div id="completed">
+  <div>
+    <ul class="nav nav-pills">
+      <li role="presentation" class="active"><a href="#/home">Home</a></li>
+      <li role="presentation"><a href="/" onclick="signOut();">Logout</a></li>
+    </ul>
+  </div>
+<!--   <div id="completed">
     <h2>Mental Breakdown{{': ' + mentalPercent.Yes + '% Complete!'}}</h2>
   </div>
   <div class="progress">
@@ -57,4 +68,4 @@
       <td>{{mentalPercent.No}}</td>
     </tr>
   </tbody>
-</table>
+</table> -->
