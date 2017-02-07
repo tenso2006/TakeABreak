@@ -1,13 +1,13 @@
-<div>
+<div ng-controller='HomeCtrl'>
   <h2>Welcome back, here is your Break!</h2>
-  <!-- <div id="time">
+  <div id="time">
     <h1>Time</h1>
-  </div> -->
+  </div>
   <div align = "center">
     <h1>Take a Break</h1>
   </div>
 
-  <div align = "center" ng-view style = "margin: 5%"></div>
+  <div align = "center" style = "margin: 5%"></div>
   <div class="jumbotron">
     <h2 ng-model="breakType">{{break.type}}</h2>
     <h1>{{break.title}}</h1>
@@ -25,6 +25,7 @@
       <li role="presentation"><a href="/" onclick="signOut();">Logout</a></li>
     </ul>
   </div>
+</div>
 <!--   <div id="completed">
     <h2>Mental Breakdown{{': ' + mentalPercent.Yes + '% Complete!'}}</h2>
   </div>

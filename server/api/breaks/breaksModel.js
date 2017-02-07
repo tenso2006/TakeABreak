@@ -20,17 +20,17 @@ Break.resetCount(function(err, nextCount) {
   console.log('Count is at: ', nextCount);
 });
 
-// Mental Break JSON upload
-Break.create(mentalBreaks, function(err, breaks) {
-  if (err) {
-    return console.log(err);
-  }
-  // Create Physical Break JSON upload
-  Break.create(physicalBreaks, function(err, breaks) {
-    if (err) {
-      return console.log(err);
-    }
-  });
-});
+/*  Un-comment to initialize database */
+// Break.create(mentalBreaks, function(err, breaks) {
+//   if (err) {
+//     return console.log(err);
+//   }
+//   // Create Physical Break JSON upload
+//   Break.create(physicalBreaks, function(err, breaks) {
+//     if (err) {
+//       return console.log(err);
+//     }
+//   });
+// });
 
 module.exports = Break;

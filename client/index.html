@@ -4,7 +4,6 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
   <meta name="google-signin-scope" content="profile email">
-
   <!-- placement of clientID here to enable access to Google sign-in API features -->
   <meta name="google-signin-client_id" content="615892834166-ivohjnsuejg5llvsn8khqcqher5qfbpm.apps.googleusercontent.com">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,9 +13,8 @@
 
   <title>Take a Break</title>
 </head>
-<body ng-app="myApp">
 
-
+<body ng-app="zen">
   <div align = "center" ng-view style = "margin: 5%"></div>
 
   <!-- cdns -->
@@ -27,14 +25,15 @@
   <script src="lib/jquery/dist/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-  <!-- app module -->
-  <script src="app.js"></script>
   <!-- services -->
   <script src="/services/services.js"></script>
+
   <!-- constrollers -->
   <script src="/home/home.js"></script>
-  <script src="/history/historyController.js"></script>
+  <script src="/history/history.js"></script>
 
+  <!-- app module -->
+  <script src="app.js"></script>
 
   <script>
     gapi.load('auth2', function(){
