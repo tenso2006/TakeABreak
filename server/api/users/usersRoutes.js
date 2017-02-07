@@ -1,4 +1,4 @@
-const router = require('../api');
+const router = require('express').Router();
 const UsersCtrl = require('./usersController');
 
 // TODO: Get All Users
@@ -20,3 +20,5 @@ router.get('/:email', UsersCtrl.getUserByEmail);
 // app.get('/:id', UsersCtrl.getUserById);
 
 router.post('/', UsersCtrl.addUser);
+
+module.exports = router;

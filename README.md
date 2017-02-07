@@ -1,12 +1,11 @@
 # Take a Break
 
-A web platform to send friendly reminders to take breaks. Increase productivity and grow.
+A web platform to send friendly reminders to take breaks, increase productivity, and grow.
 
 ## Team
 
-  - __Product Owner__: Marcus Svey
-  - __Scrum Master__: Albert Chang
-  - __Development Team Members__: Michael Sermersheim, Peter Muller
+  - __Product Owner__: Derek Young
+  - __Development Team Members__: David Chang
 
 ## Table of Contents
 
@@ -28,7 +27,7 @@ A web platform to send friendly reminders to take breaks. Increase productivity 
 - Node 0.10.x
 - Express   
 - Mongo DB
-- Mongoose 
+- Mongoose
 - Angular 1.6x
 
 
@@ -39,9 +38,7 @@ A web platform to send friendly reminders to take breaks. Increase productivity 
 From within the root directory:
 
 ```sh
-sudo npm install -g bower
 npm install
-bower install
 ```
 
 ### Roadmap

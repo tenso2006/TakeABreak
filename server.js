@@ -1,5 +1,6 @@
 const express = require('express');
-const api = require('./server/api/api')
+const db = require('./server/db/database');
+const api = require('./server/api/api');
 const app = express();
 const port = process.env.PORT || 8000;
 

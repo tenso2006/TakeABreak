@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const autoIncrement = require('mongoose-auto-increment');
-const mentalBreaks = require('../data/mental.json');
-const physicalBreaks = require('../data/physical.json');
+const mentalBreaks = require('../../db/data/mental.json');
+const physicalBreaks = require('../../db/data/physical.json');
 
 const breakSchema = mongoose.Schema({
   type: {type: String, required: true},
