@@ -20,6 +20,10 @@ h1, h2, h3, h4, p {
   text-align: center;
 }
 
+#someFunkyDiv {
+  background-color: #82ccc8;
+}
+
 #home-container {
   height: 400px;
 }
