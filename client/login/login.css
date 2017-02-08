@@ -14,6 +14,19 @@ body {
   width: 100%
 }
 
+#zenImage, .login-container {
+  float: left;
+  width: 70%;
+  height: 100%;
+}
+
+
+#zenImage {
+  background: beige;
+  padding: 40px;
+  float: left;
+}
+
 .g-signin2 {
   margin-top: 50px;
 }
