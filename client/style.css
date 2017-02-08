@@ -7,8 +7,8 @@ h1, h2, h3, h4, p {
   padding: 0;
 }
 
-.zenify {
-
+.subtext {
+ font-size: 14px;
 }
 
 .jumbotron {
@@ -29,7 +29,7 @@ h1, h2, h3, h4, p {
   margin-top: 10px;
 }
 
-#guru-select{
+.break-select{
   border: 1px solid #111;
   background: transparent;
   padding: 5px;
@@ -44,7 +44,7 @@ h1, h2, h3, h4, p {
   text-align: left;
 }
 
-#guru * {
+#options * {
   display: inline-block;
 }
 

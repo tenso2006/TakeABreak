@@ -8,13 +8,27 @@
     <div class="clearfix">
       <div id="time" class="jumbotron">
         <div id="guru">
-          <p>Your Zen Guru is: </p>
-          <select name="masterSelect" ng-model="data.selectedOption" id="guru-select">
-            <option value="mix">Master Mix</option>
-            <option value="mind">Master Mind</option>
-            <option value="move">Master Move</option>
-          </select>
-          <p>{{data.selectedOption}}</p>
+          <div id="options">
+            <p>Your Zen Guru is: </p>
+            <select
+              name="masters"
+              ng-options="option.guru for option in masters.options track by option.id"
+              ng-model="masters.selected"
+              class="break-select">
+            </select>
+            <p> with </p>
+            <select
+              name="focus"
+              ng-options="option.focus for option in focus.options track by option.id"
+              ng-change="timer.reset()"
+              ng-model="focus.selected"
+              class="break-select">
+            </select>
+            <p> focus</p>
+          </div>
+          <div id="subtext">
+            <p><span class="subtext">{{masters.selected.text}} with a break every {{focus.selected.text}}</span></p>
+          </div>
         </div>
         <div id="timer">
           <h1>{{timer.time}}</h1>
@@ -25,8 +39,11 @@
           </div>
         </div>
         <div id="up-next">
-          <p>Up Next:</p>
-          <p>Zen Short - Mental Break</p>
+          <p>
+            Up Next:
+            <br/>
+            Zen Short - Mental Break
+          </p>
         </div>
       </div>
       <div id="break" class="jumbotron">
