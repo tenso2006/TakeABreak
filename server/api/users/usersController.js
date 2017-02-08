@@ -33,6 +33,16 @@ const controller = {
       // Respond back will all 'data' for the 'newUser'
       res.json(newUser);
     });
+  },
+
+  postCompletion: function(req, res, next) {
+    const type = req.body.type;
+    const date = new Date().toISOString().slice(0,10);
+    console.log('DATE?', date)
+    User.findOne({ email: 'dchang103@gmail.com'}, function(err, data) {
+      console.log('PC USER QUERY?', data)
+    })
+    res.sendStatus(200);
   }
 };
 
