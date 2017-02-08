@@ -7,7 +7,27 @@
   <div id="home-container">
     <div class="clearfix">
       <div id="time" class="jumbotron">
-        <h1>Time</h1>
+        <div id="guru">
+          <h4>You Are Working With: <span>Master Mix</span></h4>
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Update Guru
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li><a href="#">Master Mind</a></li>
+              <li><a href="#">Master Mix</a></li>
+              <li><a href="#">Master Move</a></li>
+            </ul>
+          </div>
+        </div>
+        <div id="timer">
+          <h1>24:30</h1>
+        </div>
+        <div id="up-next">
+          <p>Up Next:</p>
+          <p>Zen Short - Mental Break</p>
+        </div>
       </div>
       <div id="break" class="jumbotron">
         <h2 ng-model="breakType">{{break.type}}</h2>
@@ -23,27 +43,36 @@
     </div>
   </div>
 
+  <div id="someFunkyDiv" class="jumbotron">
+    <h2>Some funky div</h2>
+  </div>
+
   <footer>
     <nav class="navbar navbar-default navbar-fixed-bottom">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
           <a class="navbar-brand" href="#">Zen Bro</a>
         </div>
-        <div class="navbar-form navbar-right">
-          <button type="submit" class="btn btn-default" onclick="signOut()">Logout</button>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-left">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">History</a></li>
+            <li><a href="#">Settings</a></li>
+          </ul>
+          <div class="navbar-form navbar-right">
+            <button type="submit" class="btn btn-default" onclick="signOut()">Logout</button>
+          </div>
         </div>
-        <ul class="nav navbar-nav navbar-left">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">History</a></li>
-          <li><a href="#">Settings</a></li>
-        </ul>
       </div>
     </nav>
   </footer>
-  <!-- <footer>
-    <p>ZenBro</p>
-  </footer> -->
 </div>
 <!--   <div id="completed">
     <h2>Mental Breakdown{{': ' + mentalPercent.Yes + '% Complete!'}}</h2>
