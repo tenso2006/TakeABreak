@@ -21,6 +21,10 @@
         templateUrl: '/history/history.html',
         controller: 'HistoryCtrl'
       })
+      .when('/settings', {
+        templateUrl: '/settings/settings.html',
+        controller: 'SettingsCtrl'
+      })
       .otherwise({
         redirectTo: '/login',
       });
