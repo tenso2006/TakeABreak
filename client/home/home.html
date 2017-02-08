@@ -7,7 +7,27 @@
   <div id="home-container">
     <div class="clearfix">
       <div id="time" class="jumbotron">
-        <h1>Time</h1>
+        <div id="guru">
+          <h4>You Are Working With: <span>Master Mix</span></h4>
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Update Guru
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li><a href="#">Master Mind</a></li>
+              <li><a href="#">Master Mix</a></li>
+              <li><a href="#">Master Move</a></li>
+            </ul>
+          </div>
+        </div>
+        <div id="timer">
+          <h1>24:30</h1>
+        </div>
+        <div id="up-next">
+          <p>Up Next:</p>
+          <p>Zen Short - Mental Break</p>
+        </div>
       </div>
       <div id="break" class="jumbotron">
         <h2 ng-model="breakType">{{break.type}}</h2>

@@ -20,6 +20,22 @@ h1, h2, h3, h4, p {
   text-align: center;
 }
 
+.dropdown {
+  margin-top: 10px;
+}
+
+#guru {
+  text-align: left;
+}
+
+#timer {
+  height: 50%;
+}
+
+#up-next, #guru {
+  height: 25%;
+}
+
 #someFunkyDiv {
   background-color: #82ccc8;
 }
@@ -36,7 +52,7 @@ h1, h2, h3, h4, p {
 
 #time {
   background: beige;
-  padding: 40px;
+  padding: 20px 20px 0 20px;
   float: left;
 }
 
