@@ -1,7 +1,9 @@
 (function() {
   const LOGIN = angular.module('zen.login', []);
   LOGIN.controller('LoginCtrl', function($scope, $location) {
-
+    $scope.hideIt = function($location) {
+      if ($location.path() === '/login') { return true; }
+    }
   });
 
 // function onSignIn(googleUser) {

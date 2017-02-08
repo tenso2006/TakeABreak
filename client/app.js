@@ -28,4 +28,14 @@
 
       $locationProvider.hashPrefix('');
   });
+
+  APP.run(function($rootScope, $location){
+  $rootScope.$on('$routeChangeStart', function(event, next, current){
+    if ($location.path() == '/login') {
+      $rootScope.hideit = true;
+    } else {
+      $rootScope.hideit = false;
+    }
+  });
+});
 })();
