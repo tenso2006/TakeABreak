@@ -4,13 +4,13 @@
 <!-- Client secret  DieBz86awGbcUQXiZVe_cRjs -->
 
 <body>
-  <div>
+  <div controller="LoginCtrl">
     <h1 align="center" id="login-title">Take a Break</h1>
   </div>
   <img id="login-splash" src="../img/zen3.png">
   <div class="g-signin2" data-onsuccess="onSignIn" align="center"></div>
   <div>
-    <button>LogIn with Gmail</button>
+    <button class = "btn btn-primary btn-lg" ng-click="login()">LogIn with Gmail</button>
   </div>
   <script src="../lib/axios/dist/axios.js"></script>
   <script>
