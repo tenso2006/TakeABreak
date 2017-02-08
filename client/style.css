@@ -60,6 +60,22 @@ h1, h2, h3, h4, p {
   background-color: white;
 }
 
+#login-title {
+  font-family: "Indie Flower";
+  font-size: 72px;
+  font-weight: bold;
+  color: 49752B;
+  margin: 50px 0px 50px 0px;
+}
+
+#login-splash {
+  width: 100%
+}
+
+.g-signin2 {
+  margin-top: 50px;
+}
+
 .clearfix:after {
    content: " "; /* Older browser do not support empty content */
    visibility: hidden;
