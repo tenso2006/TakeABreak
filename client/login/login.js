@@ -1,9 +1,24 @@
 (function() {
   const LOGIN = angular.module('zen.login', []);
   LOGIN.controller('LoginCtrl', function($scope, $location) {
-
+    // $scope.login = function () {
+    //   $location.path();
+    // }
   });
 
+
+// example.controller("LoginController", function($scope) {
+//     $scope.login = function() {
+//         window.location.href = "https://api.imgur.com/oauth2/authorize?client_id=" + "CLIENT_ID_HERE" + "&response_type=token"
+//     }
+
+// });
+
+// example.controller("SecureController", function($scope) {
+
+//     $scope.accessToken = JSON.parse(window.localStorage.getItem("imgur")).oauth.access_token;
+
+// });
 // function onSignIn(googleUser) {
 //         // Useful data for your client-side scripts:
 //         var profile = googleUser.getBasicProfile();

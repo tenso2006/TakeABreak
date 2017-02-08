@@ -5,7 +5,7 @@
     <Link rel="stylesheet" href="style.css">
     <meta name="google-signin-scope" content="profile email">
     <!-- placement of clientID here to enable access to Google sign-in API features -->
-    <meta name="google-signin-client_id" content="615892834166-ivohjnsuejg5llvsn8khqcqher5qfbpm.apps.googleusercontent.com">
+    <meta name="google-signin-client_id" content="831072643384-se24lmircg13kuugodbcvjtatgm77uoh.apps.googleusercontent.com">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- api js: core JS library -->
@@ -15,6 +15,23 @@
   </head>
 
   <body ng-app="zen">
+    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+    <script>
+      function onSignIn(googleUser) {
+        // Useful data for your client-side scripts:
+        var profile = googleUser.getBasicProfile();
+        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+        console.log('Full Name: ' + profile.getName());
+        console.log('Given Name: ' + profile.getGivenName());
+        console.log('Family Name: ' + profile.getFamilyName());
+        console.log("Image URL: " + profile.getImageUrl());
+        console.log("Email: " + profile.getEmail());
+
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        console.log("ID Token: " + id_token);
+      };
+    </script>
     <div align = "center" ng-view></div>
 
     <!-- cdns -->
