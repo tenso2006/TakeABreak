@@ -1,7 +1,8 @@
 (function() {
   const HOME = angular.module('zen.home', []);
-  HOME.controller('HomeCtrl', function($scope, $location, GetBreak, Timer) {
+  HOME.controller('HomeCtrl', function($scope, $location, GetBreak, Timer, BroFactory) {
     $scope.break = {};
+    $scope.brofix = BroFactory.getBro();
     $scope.timer = {
       time: Timer.getTime(),
       start: function() {
@@ -27,8 +28,10 @@
       active: false
     };
 
-    $scope.getTime = function() {
-      $scope.timer.time = Timer.time;
+    $scope.masters = {
+      mind: '...ahh, ',
+      mix: 'a nice balance',
+      move: '...like a butterfly'
     }
 
     $scope.physicalBreakCount = {Yes: 0, No: 0};
