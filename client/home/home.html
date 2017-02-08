@@ -38,6 +38,9 @@
             <button type="submit" class="btn btn-default" ng-click="timer.reset()">Reset</button>
           </div>
         </div>
+      </div>
+      <!--    Take a berak section    -->
+      <div id="break" class="jumbotron">
         <div id="up-next">
           <p>
             Up Next:
@@ -45,14 +48,12 @@
             Zen Short - Mental Break
           </p>
         </div>
-      </div>
-      <div id="break" class="jumbotron">
         <h2 ng-model="breakType">{{break.type}}</h2>
         <h1>{{break.title}}</h1>
         <p>{{break.description}}</p>
         <div class="btn-group">
-          <a class="btn btn-primary btn-lg" role="button" ng-click="completeBreak($breakType)">Completed</a>
-          <a class="btn btn-primary btn-lg" role="button" ng-click="notCompleteBreak($breakType)">Skipped</a>
+          <a class="btn btn-primary btn-lg" role="button" ng-click="completeBreak($breakType)">Complete</a>
+          <a class="btn btn-primary btn-lg" role="button" ng-click="notCompleteBreak($breakType)">Skip</a>
         </div>
       </div>
     </div>

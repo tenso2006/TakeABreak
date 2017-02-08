@@ -42,18 +42,11 @@ h1, h2, h3, h4, p {
 
 #guru {
   text-align: left;
+  min-height: 30%;
 }
 
 #options * {
   display: inline-block;
-}
-
-#timer {
-  height: 50%;
-}
-
-#up-next, #guru {
-  height: 25%;
 }
 
 #someFunkyDiv {
