@@ -62,4 +62,53 @@
     }
   });
 
+  SERVICES.factory('BroFactory', function() {
+    var brotobase = [
+      'camole',
+      'mie',
+      'seph',
+      'sephenheim',
+      'skillet',
+      'tozoa',
+      'tègè',
+      'deo',
+      'do Baggins',
+      'hawk',
+      'klahoma',
+      'totype',
+      'kemon',
+      'metheus',
+      'migo',
+      'asaurus',
+      '-rex',
+      'sta Rica',
+      'tocopter',
+      'hemian Rhapsody',
+      'zeman Bhrutana',
+      'vakhiin',
+      'mance',
+      'mate',
+      'ception',
+      'manship',
+      ' Man Chu',
+      'aholic',
+      'hammer',
+      'dozer',
+      'kini',
+      'modo Dragon',
+      'fessor',
+      'sephina'
+    ];
+
+    var getBro = function() {
+      var randIndex = Math.floor(Math.random() * brotobase.length);
+      return brotobase[randIndex];
+    }
+
+    return {
+      getBro: getBro,
+      brotobase: brotobase
+    };
+  });
+
 })();

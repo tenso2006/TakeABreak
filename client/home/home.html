@@ -1,25 +1,20 @@
 <div ng-controller='HomeCtrl'>
   <div class="header">
-    <h1>ZenBro</h1>
-    <h3>Welcome back ZenCuz!</h3>
+    <h1>Zen Bro{{brofix}}</h1>
+    <h3>Welcome back, Zen Cuz!</h3>
   </div>
 
   <div id="home-container">
     <div class="clearfix">
       <div id="time" class="jumbotron">
         <div id="guru">
-          <h4>You Are Working With: <span>Master Mix</span></h4>
-          <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-              Update Guru
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-              <li><a href="#">Master Mind</a></li>
-              <li><a href="#">Master Mix</a></li>
-              <li><a href="#">Master Move</a></li>
-            </ul>
-          </div>
+          <p>Your Zen Guru is: </p>
+          <select name="masterSelect" ng-model="data.selectedOption" id="guru-select">
+            <option value="mix">Master Mix</option>
+            <option value="mind">Master Mind</option>
+            <option value="move">Master Move</option>
+          </select>
+          <p>{{data.selectedOption}}</p>
         </div>
         <div id="timer">
           <h1>{{timer.time}}</h1>
