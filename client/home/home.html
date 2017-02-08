@@ -31,13 +31,16 @@
           </div>
         </div>
         <div id="timer">
-          <h1>{{timer.time}}</h1>
+          <h1>{{timer.displayTime()}}</h1>
           <div>
             <button type="submit" class="btn btn-default" ng-click="timer.start()">Start</button>
             <button type="submit" class="btn btn-default" ng-click="timer.pause()">Pause</button>
             <button type="submit" class="btn btn-default" ng-click="timer.reset()">Reset</button>
           </div>
         </div>
+      </div>
+      <!--    Take a berak section    -->
+      <div id="break" class="jumbotron">
         <div id="up-next">
           <p>
             Up Next:
@@ -45,21 +48,25 @@
             Zen Short - Mental Break
           </p>
         </div>
-      </div>
-      <div id="break" class="jumbotron">
         <h2 ng-model="breakType">{{break.type}}</h2>
         <h1>{{break.title}}</h1>
         <p>{{break.description}}</p>
         <div class="btn-group">
-          <a class="btn btn-primary btn-lg" role="button" ng-click="completeBreak($breakType)">Completed</a>
-          <a class="btn btn-primary btn-lg" role="button" ng-click="notCompleteBreak($breakType)">Skipped</a>
+          <a class="btn btn-primary btn-lg" role="button" ng-click="completeBreak($breakType)">Complete</a>
+          <a class="btn btn-primary btn-lg" role="button" ng-click="notCompleteBreak($breakType)">Skip</a>
         </div>
       </div>
     </div>
   </div>
 
-  <div id="someFunkyDiv" class="jumbotron">
-    <h2>Some funky div</h2>
+  <div id="waves-container" class="jumbotron">
+    <img id="wave-1" class="wave" ng-src="../img/{{wave.getSource()}}">
+    <img id="wave-2" ng-class="{blue:'wave', white:'wave-large'}[focus.selected.focus]" src="../img/wave.png">
+    <img id="wave-3" class="wave" src="../img/wave.png">
+    <img id="wave-4" class="wave-large" src="../img/wave.png">
+  </div>
+  <div id="video" class="jumbotron">
+    <h2>Break with a Bro</h2>
   </div>
 </div>
 <!--   <div id="completed">

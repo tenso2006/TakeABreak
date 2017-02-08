@@ -3,30 +3,6 @@
   HOME.controller('HomeCtrl', function($scope, $location, GetBreak, Timer, BroFactory) {
     $scope.break = {};
     $scope.brofix = BroFactory.getBro();
-    $scope.timer = {
-      time: Timer.getTime(),
-      start: function() {
-        Timer.start($scope.focus.selected.length);
-        $scope.timer.active = true;
-        setTimeout($scope.timer.getTime, 500);
-      },
-      pause: function() {
-        $scope.timer.active = false;
-      },
-      reset: function() {
-        Timer.reset($scope.focus.selected.length);
-        $scope.timer.pause();
-        $scope.timer.time = Timer.getTime($scope.timer.active);
-      },
-      getTime: function() {
-        $scope.timer.time = Timer.getTime($scope.timer.active);
-        $scope.$apply();
-        if ($scope.timer.active) {
-          setTimeout($scope.timer.getTime, 500);
-        }
-      },
-      active: false
-    };
 
     $scope.masters = {
       options: [
@@ -39,15 +15,52 @@
 
     $scope.focus = {
       options: [
-        {id: '1', focus: 'blue', text: '25 minutes', length: 1000 * 60 * 25},
+        {id: '1', focus: 'blue', text: '25 minutes', length: 1000 * 10 * 1},
         {id: '2', focus: 'white', text: '50 minutes', length: 1000 * 60 * 50}
       ],
-      selected: {id: '1', focus: 'blue', text: '25 minutes', length: 1000 * 60 * 25}
+      selected: {id: '1', focus: 'blue', text: '25 minutes', length: 1000 * 10 * 1}
     }
 
-    $scope.updateTime = function() {
-      console.log('hi');
-    }
+    $scope.timer = {
+      time: $scope.focus.selected.length,
+      endTime: 0,
+      start: function() {
+        $scope.timer.endTime = Timer.now() + $scope.timer.time;
+        $scope.timer.active = true;
+        setTimeout($scope.timer.getTime, 500);
+      },
+      pause: function() {
+        $scope.timer.active = false;
+      },
+      reset: function() {
+        $scope.timer.pause();
+        $scope.timer.time = $scope.focus.selected.length;
+      },
+      getTime: function() {
+        console.log($scope.wave.getSource());
+        if ($scope.timer.time <= 500) {
+          $scope.timer.active = false;
+        }
+        if ($scope.timer.active) {
+          $scope.timer.time = $scope.timer.endTime - Timer.now();
+          $scope.$apply();
+          setTimeout($scope.timer.getTime, 500);
+        }
+      },
+      displayTime: function() {
+        return Timer.formatTime($scope.timer.time);
+      },
+      active: false
+    };
+
+
+    $scope.wave = {
+      getSource: function() {
+        if ($scope.timer.time < 500) return 'surfer-0.png';
+        var interval = Math.ceil(($scope.timer.time) / ($scope.focus.selected.length / 3));
+        return 'surfer-' + interval + '.png';
+      }
+    };
 
     // $scope.physicalBreakCount = {Yes: 0, No: 0};
     // $scope.mentalBreakCount = {Yes: 0, No: 0};
@@ -67,7 +80,7 @@
       breakType = $scope.break.type;
       console.log('Type of Break is: ', breakType);
       $.post('api/users/completion', { /*some user data*/ type: breakType }, function(resp, status, someObj) {
-        console.log(resp) 
+        console.log(resp)
       })
     };
 
