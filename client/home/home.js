@@ -1,11 +1,12 @@
 (function() {
   const HOME = angular.module('zen.home', []);
-  HOME.controller('HomeCtrl', function($scope, $location, GetBreak, Timer) {
+  HOME.controller('HomeCtrl', function($scope, $location, GetBreak, Timer, BroFactory) {
     $scope.break = {};
+    $scope.brofix = BroFactory.getBro();
     $scope.timer = {
       time: Timer.getTime(),
       start: function() {
-        Timer.start();
+        Timer.start($scope.focus.selected.length);
         $scope.timer.active = true;
         setTimeout($scope.timer.getTime, 500);
       },
@@ -13,7 +14,7 @@
         $scope.timer.active = false;
       },
       reset: function() {
-        Timer.reset();
+        Timer.reset($scope.focus.selected.length);
         $scope.timer.pause();
         $scope.timer.time = Timer.getTime($scope.timer.active);
       },
@@ -27,8 +28,25 @@
       active: false
     };
 
-    $scope.getTime = function() {
-      $scope.timer.time = Timer.time;
+    $scope.masters = {
+      options: [
+        {id: '1', guru: 'Master Mind', text: '...inner-focused'},
+        {id: '2', guru: 'Master Mix', text: '...a nice balance'},
+        {id: '3', guru: 'Master Move', text: '...body-focused'}
+      ],
+      selected: {id: '2', guru: 'Master Mix', text: '...a nice balance'}
+    }
+
+    $scope.focus = {
+      options: [
+        {id: '1', focus: 'blue', text: '25 minutes', length: 1000 * 60 * 25},
+        {id: '2', focus: 'white', text: '50 minutes', length: 1000 * 60 * 50}
+      ],
+      selected: {id: '1', focus: 'blue', text: '25 minutes', length: 1000 * 60 * 25}
+    }
+
+    $scope.updateTime = function() {
+      console.log('hi');
     }
 
     // $scope.physicalBreakCount = {Yes: 0, No: 0};

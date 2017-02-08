@@ -4,10 +4,11 @@ body {
 
 h1, h2, h3, h4, p {
   margin: 0;
+  padding: 0;
 }
 
-.zenify {
-  
+.subtext {
+ font-size: 14px;
 }
 
 .jumbotron {
@@ -28,8 +29,23 @@ h1, h2, h3, h4, p {
   margin-top: 10px;
 }
 
+.break-select{
+  border: 1px solid #111;
+  background: transparent;
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 #guru {
   text-align: left;
+}
+
+#options * {
+  display: inline-block;
 }
 
 #timer {

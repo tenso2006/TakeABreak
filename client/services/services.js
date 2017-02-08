@@ -19,10 +19,8 @@
   });
 
   SERVICES.factory('Timer', function() {
-    var twentyFiveMinutes = 1000 * 60 * 25;
-
     return {
-      time: twentyFiveMinutes,
+      time: 1000 * 60 * 25,
       endTime: 0,
       getTime: getTime,
       start: start,
@@ -41,14 +39,14 @@
     }
 
 
-    function start() {
+    function start(timerLength) {
       var date = new Date();
       var now = date.getTime();
-      return this.endTime = now + this.time;
+      return this.endTime = now + timerLength;
     }
 
-    function reset() {
-      return this.time = twentyFiveMinutes;
+    function reset(timerLength) {
+      return this.time = timerLength;
     }
 
     function formatTime(milliseconds) {
@@ -60,6 +58,55 @@
     function pad(num) {
       return num.toString().length > 1 ? num : '0'.concat(String(num));
     }
+  });
+
+  SERVICES.factory('BroFactory', function() {
+    var brotobase = [
+      'camole',
+      'mie',
+      'seph',
+      'sephenheim',
+      'skillet',
+      'tozoa',
+      'tègè',
+      'deo',
+      'do Baggins',
+      'hawk',
+      'klahoma',
+      'totype',
+      'kemon',
+      'metheus',
+      'migo',
+      'asaurus',
+      '-rex',
+      'sta Rica',
+      'tocopter',
+      'hemian Rhapsody',
+      'zeman Bhrutana',
+      'vakhiin',
+      'mance',
+      'mate',
+      'ception',
+      'manship',
+      ' Man Chu',
+      'aholic',
+      'hammer',
+      'dozer',
+      'kini',
+      'modo Dragon',
+      'fessor',
+      'sephina'
+    ];
+
+    var getBro = function() {
+      var randIndex = Math.floor(Math.random() * brotobase.length);
+      return brotobase[randIndex];
+    }
+
+    return {
+      getBro: getBro,
+      brotobase: brotobase
+    };
   });
 
 })();
