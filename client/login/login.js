@@ -3,7 +3,9 @@
   LOGIN.controller('LoginCtrl', function($scope, $location) {
 
   });
+
 })();
+
 
 
 
