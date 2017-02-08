@@ -33,6 +33,10 @@ const controller = {
       // Respond back will all 'data' for the 'newUser'
       res.json(newUser);
     });
+  },
+
+  postCompletion: function(req, res, next) {
+    res.status(200).send('POSTCOMPLETION')
   }
 };
 

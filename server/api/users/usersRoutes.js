@@ -20,5 +20,6 @@ router.get('/:email', UsersCtrl.getUserByEmail);
 // app.get('/:id', UsersCtrl.getUserById);
 
 router.post('/', UsersCtrl.addUser);
+router.post('/completion', UsersCtrl.postCompletion);
 
 module.exports = router;
