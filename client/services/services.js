@@ -19,10 +19,8 @@
   });
 
   SERVICES.factory('Timer', function() {
-    var twentyFiveMinutes = 1000 * 60 * 25;
-
     return {
-      time: twentyFiveMinutes,
+      time: 1000 * 60 * 25,
       endTime: 0,
       getTime: getTime,
       start: start,
@@ -41,14 +39,14 @@
     }
 
 
-    function start() {
+    function start(timerLength) {
       var date = new Date();
       var now = date.getTime();
-      return this.endTime = now + this.time;
+      return this.endTime = now + timerLength;
     }
 
-    function reset() {
-      return this.time = twentyFiveMinutes;
+    function reset(timerLength) {
+      return this.time = timerLength;
     }
 
     function formatTime(milliseconds) {
