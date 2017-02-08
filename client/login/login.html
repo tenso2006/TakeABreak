@@ -3,30 +3,15 @@
 <!-- ten:  831072643384-se24lmircg13kuugodbcvjtatgm77uoh.apps.googleusercontent.com -->
 <!-- Client secret  DieBz86awGbcUQXiZVe_cRjs -->
 
-<html lang="en">
-  <head>
-    <link rel="stylesheet" href="./login/login.css">
+<body>
+  <div>
+    <h1 align="center" id="login-title">Take a Break</h1>
+  </div>
+  <img id="login-splash" src="../img/zen3.png">
+  <div class="g-signin2" data-onsuccess="onSignIn" align="center"></div>
 
-    <!-- placement of clientID here to enable access to Google sign-in API features -->
-    <meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id" content="615892834166-ivohjnsuejg5llvsn8khqcqher5qfbpm.apps.googleusercontent.com">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../lib/axios/dist/axios.js"></script>
+  <script>
 
-    <!-- api js: core JS library -->
-    <script src="https://apis.google.com/js/platform.js"></script>
-    <!-- fuck yeah fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
-  </head>
-  <body>
-    <div>
-      <h1 align="center" id="login-title">Take a Break</h1>
-    </div>
-    <img id="login-splash" src="../img/zen3.png">
-    <div class="g-signin2" data-onsuccess="onSignIn" align="center"></div>
-
-    <script src="../lib/axios/dist/axios.js"></script>
-    <script>
-
-    </script>
-  </body>
-</html>
+  </script>
+</body>
