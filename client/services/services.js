@@ -20,33 +20,13 @@
 
   SERVICES.factory('Timer', function() {
     return {
-      time: 1000 * 60 * 25,
-      endTime: 0,
-      getTime: getTime,
-      start: start,
-      reset: reset
+      now: now,
+      formatTime: formatTime
     }
 
-    function getTime(active) {
-      if (active) {
-        var date = new Date();
-        var now = date.getTime();
-
-        this.time = this.endTime - now;
-        return formatTime(this.time);
-      }
-      return formatTime(this.time);
-    }
-
-
-    function start(timerLength) {
+    function now() {
       var date = new Date();
-      var now = date.getTime();
-      return this.endTime = now + timerLength;
-    }
-
-    function reset(timerLength) {
-      return this.time = timerLength;
+      return date.getTime();
     }
 
     function formatTime(milliseconds) {

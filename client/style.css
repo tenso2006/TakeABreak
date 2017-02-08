@@ -49,8 +49,17 @@ h1, h2, h3, h4, p {
   display: inline-block;
 }
 
-#someFunkyDiv {
+#waves-container {
   background-color: #82ccc8;
+  padding: 0;
+}
+
+.wave {
+  width: 10%;
+}
+
+.wave-large {
+  width: 20%;
 }
 
 #home-container {
@@ -83,6 +92,10 @@ h1, h2, h3, h4, p {
 
 #login-splash {
   width: 100%
+}
+
+#video {
+  margin-bottom: 50px;
 }
 
 .g-signin2 {
