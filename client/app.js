@@ -22,7 +22,7 @@
         controller: 'HistoryCtrl'
       })
       .otherwise({
-        templateUrl: '/login',
+        redirectTo: '/login',
       });
 
 
