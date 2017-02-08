@@ -1,7 +1,36 @@
 (function() {
   const HOME = angular.module('zen.home', []);
-  HOME.controller('HomeCtrl', function($scope, $location, GetBreak) {
+  HOME.controller('HomeCtrl', function($scope, $location, GetBreak, Timer) {
     $scope.break = {};
+    $scope.timer = {
+      time: Timer.getTime(),
+      start: function() {
+        Timer.start();
+        $scope.timer.active = true;
+        setTimeout($scope.timer.getTime, 500);
+      },
+      pause: function() {
+        $scope.timer.active = false;
+      },
+      reset: function() {
+        Timer.reset();
+        $scope.timer.pause();
+        $scope.timer.time = Timer.getTime($scope.timer.active);
+      },
+      getTime: function() {
+        $scope.timer.time = Timer.getTime($scope.timer.active);
+        $scope.$apply();
+        if ($scope.timer.active) {
+          setTimeout($scope.timer.getTime, 500);
+        }
+      },
+      active: false
+    };
+
+    $scope.getTime = function() {
+      $scope.timer.time = Timer.time;
+    }
+
     $scope.physicalBreakCount = {Yes: 0, No: 0};
     $scope.mentalBreakCount = {Yes: 0, No: 0};
     $scope.physicalPercent = {Yes: 0, No: 0};
@@ -80,5 +109,3 @@
 
 
     // console.log(aBreak.getBreak());
-
-    
