@@ -53,6 +53,7 @@
       active: false
     };
 
+
     $scope.wave = {
       getSource: function() {
         if ($scope.timer.time < 500) return 'surfer-0.png';
@@ -78,29 +79,9 @@
     $scope.completeBreak = function(breakType) {
       breakType = $scope.break.type;
       console.log('Type of Break is: ', breakType);
-      // if (breakType === 'Physical') {
-      //   $scope.physicalBreakCount.Yes++;
-
-      //   $scope.physicalPercent.Yes =
-      //   Math.round(($scope.physicalBreakCount.Yes / ($scope.physicalBreakCount.Yes +
-      //     $scope.physicalBreakCount.No)) * 100);
-
-      //   $scope.physicalPercent.No = 100 - $scope.physicalPercent.Yes;
-      //   document.getElementById("physical-yes").style.width = $scope.physicalPercent.Yes.toString() + '%';
-      //   document.getElementById("physical-no").style.width = $scope.physicalPercent.No.toString() + '%';
-      //   getABreak();
-      // } else {
-      //   $scope.mentalBreakCount.Yes++;
-      //   $scope.mentalPercent.Yes =
-
-      //   Math.round(($scope.mentalBreakCount.Yes / ($scope.mentalBreakCount.Yes +
-      //     $scope.mentalBreakCount.No)) * 100);
-
-      //   $scope.mentalPercent.No = 100 - $scope.mentalPercent.Yes;
-      //   document.getElementById("mental-yes").style.width = $scope.mentalPercent.Yes.toString() + '%';
-      //   document.getElementById("mental-no").style.width = $scope.mentalPercent.No.toString() + '%';
-      //   getABreak();
-      // }
+      $.post('api/users/completion', { /*some user data*/ type: breakType }, function(resp, status, someObj) {
+        console.log(resp)
+      })
     };
 
     $scope.notCompleteBreak = function(breakType) {
