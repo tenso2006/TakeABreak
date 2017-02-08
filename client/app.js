@@ -2,6 +2,7 @@
   const APP = angular.module('zen', [
     'zen.home',
     'zen.history',
+    'zen.login',
     'zen.services',
     'ngRoute'
   ]);
@@ -13,15 +14,15 @@
         controller: 'HomeCtrl'
       })
       .when('/login', {
-        templateUrl: '/login/login.html'
-        //TODO: controller
+        templateUrl: '/login/login.html',
+        controller: 'LoginCtrl'
       })
       .when('/history', {
         templateUrl: '/history/history.html',
         controller: 'HistoryCtrl'
       })
       .otherwise({
-        templateUrl: '/login',
+        redirectTo: '/login',
       });
 
 
