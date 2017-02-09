@@ -10,18 +10,9 @@
   ]);
 
   APP.controller('MainCtrl', function($scope, $location, $window, Auth) {
-
     $scope.isAuthorized = Auth.isAuth;
-
+    $scope.signOut = Auth.signout;
     $scope.ghost = function () {};
-
-    $scope.signOut = function () {
-      $window.localStorage.removeItem('com.zen');
-      var auth2 = gapi.auth2.getAuthInstance();
-      auth2.signOut().then(function () {
-        console.log('User signed out.');
-      });
-    }
   });
 
   APP.config(function($routeProvider, $locationProvider) {
