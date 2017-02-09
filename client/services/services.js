@@ -75,7 +75,11 @@
       'kini',
       'modo Dragon',
       'fessor',
-      'sephina'
+      'sephina',
+      'zilla',
+      'kachu',
+      'ey McBrosters',
+      'nie Sanders'
     ];
 
     var getBro = function() {
