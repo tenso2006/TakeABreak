@@ -7,6 +7,26 @@ h1, h2, h3, h4, p {
   padding: 0;
 }
 
+header {
+  height: 20%;
+  background-color: #fed587;
+  background: linear-gradient(to bottom right, #fed587, #ffe6b7);
+  padding: 20px 40px;
+  text-align: center;
+}
+
+header img {
+  height: 100%;
+}
+
+header img, .heading {
+  display: inline-block;
+}
+
+.heading {
+  vertical-align: middle;
+}
+
 .subtext {
  font-size: 14px;
 }
@@ -17,12 +37,6 @@ h1, h2, h3, h4, p {
 
 .navbar {
   margin-bottom: 0;
-}
-
-.header {
-  padding: 40px;
-  background-color: #fed587;
-  text-align: center;
 }
 
 .dropdown {
@@ -73,8 +87,12 @@ h1, h2, h3, h4, p {
   background: beige;
 }
 
+#break {
+  padding: 20px 40px 20px 0;
+}
+
 #time {
-  padding: 20px 20px 0 20px;
+  padding: 20px 20px 0 40px;
   float: left;
 }
 
