@@ -41,9 +41,9 @@
           </div>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-left">
-              <li class="active"><a href="#">Home</a></li>
-              <li ng-show="isAuthorized()"><a href="#/journey">Journey</a></li>
-              <li ng-show="isAuthorized()"><a href="#/settings">Settings</a></li>
+              <li ng-class="isActive('/')"><a href="#">Home</a></li>
+              <li ng-class="isActive('/journey')" ng-show="isAuthorized()"><a href="#/journey">Journey</a></li>
+              <li ng-class="isActive('/settings')" ng-show="isAuthorized()"><a href="#/settings">Settings</a></li>
             </ul>
             <div class="navbar-form navbar-right">
               <div ng-hide="isAuthorized()" class="g-signin2" data-onsuccess="onSignIn"></div>

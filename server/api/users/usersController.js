@@ -44,12 +44,14 @@ const controller = {
     const query = { email: JSON.parse(req.headers.user).email };
     User.findOne(query)
     .select('completedTasks')
-    .exec(function(err, data) { 
+    .exec(function(err, data) {
+      console.log(data);
       if (err) {
-        res.sendStatus(500);
-      } else {
-        res.send(data.completedTasks);
+        return res.sendStatus(500);
+      } else if (data !== null){
+        return res.send(data.completedTasks);
       }
+      return res.status(200).send('No history to display')
     });
   },
 

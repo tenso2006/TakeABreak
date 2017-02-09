@@ -15,7 +15,10 @@
     $scope.isAuthorized = Auth.isAuth;
     $scope.signOut = Auth.signout;
     $scope.user = '';
-    $scope.ghost = function () {
+    $scope.isActive = function(url) {
+      return $location.path() === url ? 'active' : '';
+    }
+    $scope.ghost = function() {
       $scope.user = JSON.parse($window.localStorage.getItem('user'));
     };
   });
