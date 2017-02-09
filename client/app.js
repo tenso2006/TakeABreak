@@ -4,6 +4,7 @@
     'zen.journey',
     'zen.login',
     'zen.services',
+    'zen.settings',
     'ngRoute'
   ]);
 
