@@ -70,10 +70,10 @@ h1, h2, h3, h4, p {
   float: left;
   width: 50%;
   height: 100%;
+  background: beige;
 }
 
 #time {
-  background: beige;
   padding: 20px 20px 0 20px;
   float: left;
 }
@@ -99,7 +99,6 @@ h1, h2, h3, h4, p {
 }
 
 .g-signin2 {
-  margin-top: 50px;
 }
 
 .clearfix:after {
