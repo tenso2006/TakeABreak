@@ -9,10 +9,14 @@
     'ngRoute'
   ]);
 
-  APP.controller('MainCtrl', function($scope, $location, $window, Auth) {
+  APP.controller('MainCtrl', function($scope, $location, $window, Auth, BroFactory) {
+    $scope.brofix = BroFactory.getBro();
     $scope.isAuthorized = Auth.isAuth;
     $scope.signOut = Auth.signout;
-    $scope.ghost = function () {};
+    $scope.user = '';
+    $scope.ghost = function () {
+      $scope.user = JSON.parse($window.localStorage.getItem('user'));
+    };
   });
 
   APP.config(function($routeProvider, $locationProvider) {

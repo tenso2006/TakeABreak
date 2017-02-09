@@ -1,8 +1,8 @@
 (function() {
   const HOME = angular.module('zen.home', []);
-  HOME.controller('HomeCtrl', function($scope, $location, GetBreak, Timer, BroFactory, $window) {
+
+  HOME.controller('HomeCtrl', function($scope, $location, GetBreak, Timer, $window) {
     $scope.break = {};
-    $scope.brofix = BroFactory.getBro();
 
     $scope.masters = {
       options: [
