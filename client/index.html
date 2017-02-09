@@ -16,46 +16,9 @@
 
   <body ng-app="zen">
     <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-    <script>
-      function onSignIn(googleUser) {
-        // Useful data for your client-side scripts:
-        var profile = googleUser.getBasicProfile();
-        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-        console.log('Full Name: ' + profile.getName());
-        console.log('Given Name: ' + profile.getGivenName());
-        console.log('Family Name: ' + profile.getFamilyName());
-        console.log("Image URL: " + profile.getImageUrl());
-        console.log("Email: " + profile.getEmail());
 
-        // The ID token you need to pass to your backend:
-        var id_token = googleUser.getAuthResponse().id_token;
-        console.log("ID Token: " + id_token);
-      };
-    </script>
     <div align = "center" ng-view></div>
-
-    <!-- cdns -->
-    <!-- TODO Change to minified js files before push to prod-->
-    <script src="lib/angular/angular.js"></script>
-    <script src="lib/angular-route/angular-route.js"></script>
-    <!-- <script src="lib/angular-ui-router.js"></script> -->
-    <script src="lib/axios/dist/axios.js"></script>
-    <script src="lib/jquery/dist/jquery.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="lib/Chart.min.js"></script>
-    <script src="lib/angular-chart.min.js"></script>
-
-    <!-- services -->
-    <script src="/services/services.js"></script>
-
-    <!-- constrollers -->
-    <script src="/home/home.js"></script>
-    <script src="/journey/journey.js"></script>
-    <script src="/login/login.js"></script>
-    <script src="/settings/settings.js"></script>
-
-    <!-- app module -->
-    <script src="app.js"></script>
+    
     <footer ng-hide="hideit">
       <nav class="navbar navbar-default navbar-fixed-bottom">
         <div class="container-fluid">
@@ -82,6 +45,45 @@
         </div>
       </nav>
     </footer>
+
+    <script>
+      function onSignIn(googleUser) {
+        // Useful data for your client-side scripts:
+        var profile = googleUser.getBasicProfile();
+        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+        console.log('Full Name: ' + profile.getName());
+        console.log('Given Name: ' + profile.getGivenName());
+        console.log('Family Name: ' + profile.getFamilyName());
+        console.log("Image URL: " + profile.getImageUrl());
+        console.log("Email: " + profile.getEmail());
+
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        console.log("ID Token: " + id_token);
+      };
+    </script>
+
+    <!-- TODO Change to minified js files before push to prod-->
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
+    <!-- <script src="lib/angular-ui-router.js"></script> -->
+    <script src="lib/axios/dist/axios.js"></script>
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="lib/Chart.min.js"></script>
+    <script src="lib/angular-chart.min.js"></script>
+
+    <!-- services -->
+    <script src="/services/services.js"></script>
+
+    <!-- constrollers -->
+    <script src="/home/home.js"></script>
+    <script src="/journey/journey.js"></script>
+    <script src="/login/login.js"></script>
+    <script src="/settings/settings.js"></script>
+
+    <!-- app module -->
+    <script src="app.js"></script>
     <script>
       gapi.load('auth2', function(){
           gapi.auth2.init();
