@@ -63,7 +63,7 @@ header img, .heading {
 
 #guru {
   text-align: left;
-  min-height: 30%;
+  /*min-height: 30%;*/
 }
 
 #options * {
@@ -84,13 +84,10 @@ header img, .heading {
 }
 
 #home-container {
-  height: 350px;
 }
 
 #time, #break {
-  float: left;
-  width: 50%;
-  height: 100%;
+  min-height: 350px;
 }
 
 #break {
@@ -99,7 +96,6 @@ header img, .heading {
 
 #time {
   padding: 20px 20px 0 40px;
-  float: left;
 }
 
 #graph {
