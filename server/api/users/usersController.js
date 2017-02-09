@@ -34,20 +34,36 @@ const controller = {
           // Respond back will all 'data' for the 'newUser'
           res.json(newUser);
         });
+      } else {
+        res.sendStatus(302);
       }
     })
+  },
+
+  getHistory: function(req, res, next) {
+    const query = { email: JSON.parse(req.headers.user).email };
+    User.findOne(query)
+    .select('completedTasks')
+    .exec(function(err, data) { 
+      if (err) {
+        res.sendStatus(500);
+      } else {
+        res.send(data.completedTasks);
+      }
+    });
   },
 
   postCompletion: function(req, res, next) {
     const type = req.body.type;
     const query = { email: req.body.email };
-    User.findOne(query, function(err, data) {
-      const date = new Date().toISOString().slice(0,10);
-      let insert = {date: date, reps: 1}
-      User.update(query, {$push: {"completedTasks": insert}}, {safe: true, upsert: true, new: true}, function() {
-      })
-
-    })
+    console.log(query);
+    User.findOne(query)
+    .select('completedTasks')
+    .exec(function(err, data) { console.log('wtf did we get', arguments); res.send(data.completedTasks)})
+      // const date = new Date().toISOString().slice(0,10);
+      // let insert = {date: date, reps: 1}
+      // User.update(query, { $inc: { completedTasks : insert}}, {safe: true, upsert: true, new: true}, function() {
+      // })
   }
 };
 
