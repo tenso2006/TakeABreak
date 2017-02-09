@@ -15,6 +15,15 @@
   </head>
 
   <body ng-app="zen" ng-controller="MainCtrl">
+    <header>
+      <img src="img/zenguru.png"></img>
+      <div class="heading">
+        <h1>Zen Bro{{brofix}}</h1>
+        <h3 ng-show="isAuthorized()">Welcome back, Zen {{user.firstName}}!</h3>
+        <h3 ng-hide="isAuthorized()">Welcome!</h3>
+      </div>
+    </header>
+
     <div align="center" ng-view></div>
     <div id="ghost-click" ng-click="ghost()"></div>
 
@@ -79,10 +88,18 @@
         console.log("Image URL: " + profile.getImageUrl());
         console.log("Email: " + profile.getEmail());
 
+        var user = {
+          fullName: profile.getName(),
+          firstName: profile.getGivenName(),
+          lastName: profile.getFamilyName(),
+          email: profile.getEmail()
+        };
+
         // The ID token you need to pass to your backend:
         var id_token = googleUser.getAuthResponse().id_token;
         console.log("ID Token: " + id_token);
         window.localStorage.setItem('com.zen', id_token);
+        window.localStorage.setItem('user', JSON.stringify(user));
         document.getElementById('ghost-click').click();
       };
     </script>
