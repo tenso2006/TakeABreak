@@ -80,6 +80,7 @@
       'kachu',
       'ey McBrosters',
       'nie Sanders'
+      'kachu'
     ];
 
     var getBro = function() {
