@@ -93,4 +93,21 @@
     };
   });
 
+  SERVICES.factory('zenSetting', function($http) {
+    var setBreak = function(callback) {
+
+      // return $http({
+      //   method: 'POST',
+      //   url: '/api/break',
+      // }).then(function(Break) {
+      //   console.log('Here is a break: ', Break.data[0]);
+      //   return Break.data[0];
+      // });
+    };
+
+    return {
+      set: setBreak,
+    };
+  });
+
 })();

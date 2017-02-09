@@ -142,7 +142,9 @@ header img, .heading {
 }
 
 .container {
-  background-color: #f2f2f2;
+  width: 35%;
+  /*background-color: #f2f2f2;*/
+  background-color: #82ccc8;
   border: 1px solid #ccc;
   padding: 20px;
   top: 20px;
