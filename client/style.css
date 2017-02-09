@@ -1,3 +1,14 @@
+/*
+#fff7e8 - background
+#fff9d6 - bit darker
+#512690 - purpleish main
+#ffbbbf - salmon
+#ff907c - darker salmon - text
+#ffcf97 - orangy
+#00ffc9 - green darker
+#baffa0 - green lighter
+*/
+
 body {
   box-sizing: border-box;
 }
@@ -8,15 +19,10 @@ h1, h2, h3, h4, p {
 }
 
 header {
-  height: 20%;
   background-color: #fed587;
   background: linear-gradient(to bottom right, #fed587, #ffe6b7);
   padding: 20px 40px;
   text-align: center;
-}
-
-header img {
-  height: 100%;
 }
 
 header img, .heading {
@@ -33,6 +39,7 @@ header img, .heading {
 
 .jumbotron {
   margin-bottom: 0;
+  background: beige;
 }
 
 .navbar {
@@ -77,14 +84,13 @@ header img, .heading {
 }
 
 #home-container {
-  height: 400px;
+  height: 350px;
 }
 
 #time, #break {
   float: left;
   width: 50%;
   height: 100%;
-  background: beige;
 }
 
 #break {
@@ -114,6 +120,14 @@ header img, .heading {
 
 #video {
   margin-bottom: 50px;
+}
+
+.start {
+  color: lightgreen;
+}
+
+.pause {
+  color: red;
 }
 
 .g-signin2 {
