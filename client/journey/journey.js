@@ -1,6 +1,6 @@
 (function() {
-  const HISTORY = angular.module('zen.history', ['chart.js']);
-  HISTORY.controller('HistoryCtrl', function($scope, $location) {
+  const JOURNEY = angular.module('zen.journey', ['chart.js']);
+  JOURNEY.controller('JourneyCtrl', function($scope, $location) {
     $scope.labels = ['Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat', 'Sun'];
 
     $scope.data = [
