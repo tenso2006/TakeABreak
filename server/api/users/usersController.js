@@ -23,16 +23,19 @@ const controller = {
   },
 
   addUser: function(req, res, next) {
-    const userName = req.body;
-    User.find(userName, function(err, userFound) {
-      if (!userFound) {
-        User.create(userName, function(err, newUser) {
+    console.log('user', req.body);
+    const user = req.body;
+    const email = req.body.email;
+    User.find({
+      email: email
+    }, function(err, foundUser) {
+      if (foundUser.length < 1) {
+        User.create(user, function(err, newUser) {
           if(err) {
             throw err;
             res.sendStatus(500);
           }
-          // Respond back will all 'data' for the 'newUser'
-          res.json(newUser);
+          res.sendStatus(201);
         });
       } else {
         res.sendStatus(302);
