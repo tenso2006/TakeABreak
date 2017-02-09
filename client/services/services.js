@@ -93,16 +93,15 @@
     };
   });
 
-  SERVICES.factory('zenSetting', function($http) {
+  SERVICES.factory('ZenSetting', function($http) {
     var setBreak = function(callback) {
-
-      // return $http({
-      //   method: 'POST',
-      //   url: '/api/break',
-      // }).then(function(Break) {
-      //   console.log('Here is a break: ', Break.data[0]);
-      //   return Break.data[0];
-      // });
+      return $http({
+        method: 'POST',
+        url: '/api/settings',
+      }).then(function(Setting) {
+        console.log('Here is a Setting: ', Setting.data[0]);
+        return Setting.data[0];
+      });
     };
 
     return {

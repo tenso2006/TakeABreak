@@ -1,9 +1,9 @@
 (function() {
   const LOGIN = angular.module('zen.login', []);
   LOGIN.controller('LoginCtrl', function($scope, $location) {
-    // $scope.login = function () {
-    //   $location.path();
-    // }
+    $scope.login = function () {
+      $location.path();
+    }
   });
 
 
