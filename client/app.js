@@ -4,9 +4,25 @@
     'zen.journey',
     'zen.login',
     'zen.services',
+    'zen.auth',
     'zen.settings',
     'ngRoute'
   ]);
+
+  APP.controller('MainCtrl', function($scope, $location, $window, Auth) {
+
+    $scope.isAuthorized = Auth.isAuth;
+
+    $scope.ghost = function () {};
+
+    $scope.signOut = function () {
+      $window.localStorage.removeItem('com.zen');
+      var auth2 = gapi.auth2.getAuthInstance();
+      auth2.signOut().then(function () {
+        console.log('User signed out.');
+      });
+    }
+  });
 
   APP.config(function($routeProvider, $locationProvider) {
     $routeProvider
@@ -27,10 +43,18 @@
         controller: 'SettingsCtrl'
       })
       .otherwise({
-        redirectTo: '/login',
+        redirectTo: '/',
       });
-
 
       $locationProvider.hashPrefix('');
   });
+
+  APP.run(function ($rootScope, $location, Auth) {
+    $rootScope.$on('$routeChangeStart', function (evt, next, current) {
+      if (!Auth.isAuth()) {
+        $location.path('/');
+      }
+    });
+  });
+
 })();
