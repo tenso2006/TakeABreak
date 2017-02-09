@@ -1,7 +1,7 @@
 <div ng-controller='HomeCtrl'>
   <div id="home-container">
-    <div class="clearfix">
-      <div id="time" class="jumbotron">
+    <div>
+      <div id="time" class="jumbotron col-md-4">
         <div id="guru">
           <div id="options">
             <p>Your Zen Guru is: </p>
@@ -28,15 +28,16 @@
         <div id="timer">
           <h1>{{timer.displayTime()}}</h1>
           <div>
-            <button type="submit" class="btn btn-default" ng-click="timer.start()">Start</button>
-            <button type="submit" class="btn btn-default" ng-click="timer.pause()">Pause</button>
+            <button type="submit" class="start btn btn-default" ng-click="timer.start()">Start</button>
+            <button type="submit" class="pause btn btn-default" ng-click="timer.pause()">Pause</button>
             <button type="submit" class="btn btn-default" ng-click="timer.reset()">Reset</button>
           </div>
         </div>
       </div>
       <!--    Take a berak obama section    -->
-      <div id="break" class="jumbotron">
+      <div id="break" class="jumbotron col-md-8">
         <div id="up-next">
+          <!--  Change to Step and Leap -->
           <p>
             Up Next:
             <br/>
