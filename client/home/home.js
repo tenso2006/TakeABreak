@@ -37,7 +37,6 @@
         $scope.timer.time = $scope.focus.selected.length;
       },
       getTime: function() {
-        console.log($scope.wave.getSource());
         if ($scope.timer.time <= 500) {
           $scope.timer.active = false;
         }
@@ -53,21 +52,15 @@
       active: false
     };
 
-
     $scope.wave = {
-      getSource: function() {
+      interval: 0,
+      getSource: function(id) {
+        if (id !== $scope.wave.interval) return 'wave.png';
         if ($scope.timer.time < 500) return 'surfer-0.png';
         var interval = Math.ceil(($scope.timer.time) / ($scope.focus.selected.length / 3));
         return 'surfer-' + interval + '.png';
       }
     };
-
-    // $scope.physicalBreakCount = {Yes: 0, No: 0};
-    // $scope.mentalBreakCount = {Yes: 0, No: 0};
-    // $scope.physicalPercent = {Yes: 0, No: 0};
-    // $scope.mentalPercent = {Yes: 0, No: 0};
-    // $scope.physicalPercentString = $scope.physicalPercent.Yes;
-    // $scope.mentalPercentString = $scope.mentalPercent.Yes;
 
     GetBreak.get().then(function(Break) {
       console.log('Home.js - Get a Break: ', Break);
@@ -76,47 +69,18 @@
       $scope.break.description = Break.description;
     });
 
-    $scope.completeBreak = function(breakType) {
-      breakType = $scope.break.type;
-      console.log('Type of Break is: ', breakType);
-      $.post('api/users/completion', { /*some user data*/ type: breakType }, function(resp, status, someObj) {
+    $scope.completeBreak = function() {
+      $scope.timer.reset();
+      $scope.wave.interval = ($scope.wave.interval + 1) % 4;
+
+      $.post('api/users/completion', { /*some user data*/ type: $scope.break.type }, function(resp, status, someObj) {
         console.log(resp)
-      })
+      });
     };
 
-    $scope.notCompleteBreak = function(breakType) {
-      breakType = $scope.break.type;
-      if (breakType === 'Physical') {
-        $scope.physicalBreakCount.No++;
-
-         $scope.physicalPercent.No =
-        Math.round(($scope.physicalBreakCount.No / ($scope.physicalBreakCount.Yes +
-          $scope.physicalBreakCount.No)) * 100);
-
-        $scope.physicalPercent.Yes = 100 - $scope.physicalPercent.No;
-        document.getElementById("physical-yes").style.width = $scope.physicalPercent.Yes.toString() + '%';
-        document.getElementById("physical-no").style.width = $scope.physicalPercent.No.toString() + '%';
-        getABreak();
-      } else {
-        $scope.mentalBreakCount.No++;
-         $scope.mentalPercent.No =
-
-        Math.round(($scope.mentalBreakCount.No / ($scope.mentalBreakCount.Yes +
-          $scope.mentalBreakCount.No)) * 100);
-
-        $scope.mentalPercent.Yes = 100 - $scope.mentalPercent.No;
-        document.getElementById("mental-yes").style.width = $scope.mentalPercent.Yes.toString() + '%';
-        document.getElementById("mental-no").style.width = $scope.mentalPercent.No.toString() + '%';
-        getABreak();
-      }
+    $scope.skipBreak = function() {
+      console.log('skipped');
     };
 
   });
 })();
-
-
-
-
-
-
-    // console.log(aBreak.getBreak());
