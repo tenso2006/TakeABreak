@@ -13,7 +13,8 @@ const UsersCtrl = require('./usersController');
 // });
 
 router.get('/', UsersCtrl.getUsers);
-router.get('/:email', UsersCtrl.getUserByEmail);
+// router.get('/:email', UsersCtrl.getUserByEmail);
+router.get('/journey', UsersCtrl.getHistory);
 
 // TODO: Create a route to get UserById!
 // '/api/users/:id - http://mongoosejs.com/docs/api.html#model_Model.findById
