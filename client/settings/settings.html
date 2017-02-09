@@ -15,11 +15,16 @@
         </select>
       </div>
       <div>
-        <label for="repeatInterval">Repeat Every : </label>
-        <input type="time" id="repeatInterval" name="input" ng-model="repeatInterval" placeholder="HH:mm:ss" required />
+        <label for="startTime">From: </label>
+        <input type="time" id="startTime" name="input" ng-model="startTime.value"placeholder="HH:mm:ss" required />
+      </div>
+      <div>
+        <label for="endTime">To: </label>
+        <input type="time" id="endTime" name="input" ng-model="endTime.value" placeholder="HH:mm:ss" required />
+
       </div>
       <div class="form-group">
-        <label for="excerciseType">Break Duration</label>
+        <label for="excerciseType">Break Type</label>
         <select class="form-control" id="excerciseType">
           <option>Blue</option>
           <option>White</option>
@@ -30,7 +35,7 @@
         <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
         <small id="fileHelp" class="form-text text-muted">Choose a image or picture to set as backgound image or theme for your app profile.</small>
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button ng-submit="update()" type="submit" class="btn btn-primary">Submit</button>
     </form>
   </div>
 
