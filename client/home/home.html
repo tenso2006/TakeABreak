@@ -52,18 +52,18 @@
         <h1>{{break.title}}</h1>
         <p>{{break.description}}</p>
         <div class="btn-group">
-          <a class="btn btn-primary btn-lg" role="button" ng-click="completeBreak($breakType)">Complete</a>
-          <a class="btn btn-primary btn-lg" role="button" ng-click="notCompleteBreak($breakType)">Skip</a>
+          <a class="btn btn-primary btn-lg" role="button" ng-click="completeBreak()">Complete</a>
+          <a class="btn btn-primary btn-lg" role="button" ng-click="skipBreak()">Skip</a>
         </div>
       </div>
     </div>
   </div>
 
   <div id="waves-container" class="jumbotron">
-    <img id="wave-1" class="wave" ng-src="../img/{{wave.getSource()}}">
-    <img id="wave-2" ng-class="{blue:'wave', white:'wave-large'}[focus.selected.focus]" src="../img/wave.png">
-    <img id="wave-3" class="wave" src="../img/wave.png">
-    <img id="wave-4" class="wave-large" src="../img/wave.png">
+    <img id="wave-1" ng-src="../img/{{wave.getSource(0)}}" class="wave">
+    <img id="wave-2" ng-src="../img/{{wave.getSource(1)}}" ng-class="{blue:'wave', white:'wave-large'}[focus.selected.focus]">
+    <img id="wave-3" ng-src="../img/{{wave.getSource(2)}}" class="wave">
+    <img id="wave-4" ng-src="../img/{{wave.getSource(3)}}" class="wave-large">
   </div>
   <div id="video" class="jumbotron">
     <h2>Break with a Bro</h2>
