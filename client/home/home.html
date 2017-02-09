@@ -61,51 +61,21 @@
     <img id="wave-3" ng-src="../img/{{wave.getSource(2)}}" class="wave">
     <img id="wave-4" ng-src="../img/{{wave.getSource(3)}}" class="wave-large">
   </div>
-  <div id="video" class="jumbotron">
+  <div id="videoContainer" class="jumbotron">
+    <button ng-click="startVideo()">Start Video</button>
     <h2>Break with a Bro</h2>
+    <div id="container">
+      <div class="select">
+        <label for="audioSource">Audio input source: </label><select id="audioSource"></select>
+      </div>
+      <div class="select">
+        <label for="audioOutput">Audio output destination: </label><select id="audioOutput"></select>
+      </div>
+      <div class="select">
+        <label for="videoSource">Video source: </label><select id="videoSource"></select>
+      </div>
+      <video id="video" autoplay></video>
+      <p class="small"><b>Note:</b> If you hear a reverb sound your microphone is picking up the output of your speakers/headset, lower the volume and/or move the microphone further away from your speakers/headset.</p>
+    </div>
   </div>
 </div>
-<!--   <div id="completed">
-    <h2>Mental Breakdown{{': ' + mentalPercent.Yes + '% Complete!'}}</h2>
-  </div>
-  <div class="progress">
-    <div id="mental-yes" class="progress-bar progress-bar-success" style="width: 0%">
-    </div>
-    <div id="mental-no" class="progress-bar progress-bar-warning progress-bar-info" style="width: 0%">
-    </div>
-  </div>
-  <div id="completed">
-    <h2>Physical Breakdown{{': ' + physicalPercent.Yes + '% Complete!'}}</h2>
-  <div class="progress">
-    <div id="physical-yes" class="progress-bar progress-bar-success" style="width: 0%">
-    </div>
-    <div id="physical-no" class="progress-bar progress-bar-warning progress-bar-info" style="width: 0%">
-    </div>
-</div>
-  <table id="break-count" class="table">
-<thead>
-  <tr>
-    <th>Break Type</th>
-    <th>Completed</th>
-    <th>Not Completed</th>
-    <th>% Complete</th>
-    <th>% Incomplete</th>
-  </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Physical</td>
-      <td>{{physicalBreakCount.Yes}}</td>
-      <td>{{physicalBreakCount.No}}</td>
-      <td>{{physicalPercent.Yes}}</td>
-      <td>{{physicalPercent.No}}</td>
-    </tr>
-    <tr>
-      <td>Mental</td>
-      <td>{{mentalBreakCount.Yes}}</td>
-      <td>{{mentalBreakCount.No}}</td>
-      <td>{{mentalPercent.Yes}}</td>
-      <td>{{mentalPercent.No}}</td>
-    </tr>
-  </tbody>
-</table> -->

@@ -46,7 +46,7 @@
               <li ng-show="isAuthorized()"><a href="#/settings">Settings</a></li>
             </ul>
             <div class="navbar-form navbar-right">
-              <div ng-hide="isAuthorized()" class="g-signin2" ng-click="signIn()" data-onsuccess="onSignIn"></div>
+              <div ng-hide="isAuthorized()" class="g-signin2" data-onsuccess="onSignIn"></div>
               <button ng-show="isAuthorized()" type="submit" class="btn btn-default" ng-click="signOut()">Sign Out</button>
             </div>
           </div>
@@ -66,6 +66,7 @@
     <!-- services -->
     <script src="/services/auth.js"></script>
     <script src="/services/services.js"></script>
+    <script src="services/video.js"></script>
 
     <!-- constrollers -->
     <script src="/home/home.js"></script>
@@ -88,7 +89,7 @@
         // console.log("Email: " + profile.getEmail());
 
         var user = {
-          fullName: profile.getName(),
+          name: profile.getName(),
           firstName: profile.getGivenName(),
           lastName: profile.getFamilyName(),
           email: profile.getEmail()
@@ -97,12 +98,7 @@
         // The ID token you need to pass to your backend:
         var id_token = googleUser.getAuthResponse().id_token;
         // console.log("ID Token: " + id_token);
-        var user = {
-          name: profile.getName(),
-          email: profile.getEmail()
-        }
 
-        
         $.post('/api/users', user, function() {});
         window.localStorage.setItem('com.zen', id_token);
         window.localStorage.setItem('user', JSON.stringify(user));
@@ -115,5 +111,9 @@
           gapi.auth2.init();
         });
     </script>
+
+    <!--  Video Streaming Sources - move to home.js controller or factory -->
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+
   </body>
 </html>
