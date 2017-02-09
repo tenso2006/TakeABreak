@@ -1,7 +1,7 @@
 (function() {
   const APP = angular.module('zen', [
     'zen.home',
-    'zen.history',
+    'zen.journey',
     'zen.login',
     'zen.services',
     'ngRoute'
@@ -17,9 +17,9 @@
         templateUrl: '/login/login.html',
         controller: 'LoginCtrl'
       })
-      .when('/history', {
-        templateUrl: '/history/history.html',
-        controller: 'HistoryCtrl'
+      .when('/journey', {
+        templateUrl: '/journey/journey.html',
+        controller: 'JourneyCtrl'
       })
       .when('/settings', {
         templateUrl: '/settings/settings.html',
