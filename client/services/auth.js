@@ -10,7 +10,11 @@
 
     var signout = function () {
       $window.localStorage.removeItem('com.zen');
-      $location.path('/signin');
+      var auth2 = gapi.auth2.getAuthInstance();
+      auth2.signOut().then(function () {
+        console.log('User signed out.');
+      });
+      $location.path('/');
     };
 
     return {
