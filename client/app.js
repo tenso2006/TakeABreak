@@ -6,6 +6,7 @@
     'zen.services',
     'zen.auth',
     'zen.settings',
+    'zen.video',
     'ngRoute'
   ]);
 
