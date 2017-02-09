@@ -1,4 +1,4 @@
 (function() {
-  const SETTINGS = angular.module('zen.history', ['chart.js']);
+  const SETTINGS = angular.module('zen.settings', ['chart.js']);
   SETTINGS.controller('SettingsCtrl', function($scope, $location) {});
 })();

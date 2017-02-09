@@ -5,6 +5,7 @@
     'zen.login',
     'zen.services',
     'zen.auth',
+    'zen.settings',
     'ngRoute'
   ]);
 
