@@ -24,25 +24,30 @@ const controller = {
 
   addUser: function(req, res, next) {
     const userName = req.body;
-    console.log('USERNAME', userName)
-    User.create(userName, function(err, newUser) {
-      if(err) {
-        throw err;
-        res.sendStatus(500);
+    User.find(userName, function(err, userFound) {
+      if (!userFound) {
+        User.create(userName, function(err, newUser) {
+          if(err) {
+            throw err;
+            res.sendStatus(500);
+          }
+          // Respond back will all 'data' for the 'newUser'
+          res.json(newUser);
+        });
       }
-      // Respond back will all 'data' for the 'newUser'
-      res.json(newUser);
-    });
+    })
   },
 
   postCompletion: function(req, res, next) {
     const type = req.body.type;
-    const date = new Date().toISOString().slice(0,10);
-    console.log('DATE?', date)
-    User.findOne({ email: 'dchang103@gmail.com'}, function(err, data) {
-      console.log('PC USER QUERY?', data)
+    const query = { email: req.body.email };
+    User.findOne(query, function(err, data) {
+      const date = new Date().toISOString().slice(0,10);
+      let insert = {date: date, reps: 1}
+      User.update(query, {$push: {"completedTasks": insert}}, {safe: true, upsert: true, new: true}, function() {
+      })
+
     })
-    res.status(200).send(data);
   }
 };
 

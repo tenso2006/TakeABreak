@@ -78,7 +78,8 @@
       'sephina',
       'zilla',
       'kachu',
-      'ey McBrosters'
+      'ey McBrosters',
+      'nie Sanders'
     ];
 
     var getBro = function() {

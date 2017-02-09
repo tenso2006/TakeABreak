@@ -1,6 +1,6 @@
 (function() {
   const HOME = angular.module('zen.home', []);
-  HOME.controller('HomeCtrl', function($scope, $location, GetBreak, Timer, BroFactory) {
+  HOME.controller('HomeCtrl', function($scope, $location, GetBreak, Timer, BroFactory, $window) {
     $scope.break = {};
     $scope.brofix = BroFactory.getBro();
 
@@ -73,7 +73,7 @@
       $scope.timer.reset();
       $scope.wave.interval = ($scope.wave.interval + 1) % 4;
 
-      $.post('api/users/completion', { /*some user data*/ type: $scope.break.type }, function(resp, status, someObj) {
+      $.post('api/users/completion', { email: $window.localStorage.email, type: $scope.break.type }, function(resp, status, someObj) {
         console.log(resp)
       });
     };
