@@ -1,18 +1,26 @@
 <div ng-controller="SettingsCtrl">
   <h3>Settings</h3>
   <div class="container">
-    <form>
+    <form novalidate>
       <div class="form-group">
-        <label for="breakType">Break Type</label>
-        <select class="form-control" id="exampleSelect1">
-          <option>Master Mix</option>
-          <option>Master Move</option>
-          <option>Master Mind</option>
+        <label for="daySetting">Day</label>
+        <select ng-model="repeatDay" class="form-control" id="repeatDay">
+          <option>Mon</option>
+          <option>Tues</option>
+          <option>Wed</option>
+          <option>Thurs</option>
+          <option>Fri</option>
+          <option>Sat</option>
+          <option>Sun</option>
         </select>
+      </div>
+      <div>
+        <label for="repeatInterval">Repeat Every : </label>
+        <input type="time" id="repeatInterval" name="input" ng-model="repeatInterval" placeholder="HH:mm:ss" required />
       </div>
       <div class="form-group">
         <label for="excerciseType">Break Duration</label>
-        <select multiple class="form-control" id="exampleSelect2">
+        <select class="form-control" id="excerciseType">
           <option>Blue</option>
           <option>White</option>
         </select>
