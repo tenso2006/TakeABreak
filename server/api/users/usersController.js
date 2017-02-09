@@ -24,7 +24,7 @@ const controller = {
 
   addUser: function(req, res, next) {
     const userName = req.body;
-
+    console.log('USERNAME', userName)
     User.create(userName, function(err, newUser) {
       if(err) {
         throw err;
@@ -42,7 +42,7 @@ const controller = {
     User.findOne({ email: 'dchang103@gmail.com'}, function(err, data) {
       console.log('PC USER QUERY?', data)
     })
-    res.sendStatus(200);
+    res.status(200).send(data);
   }
 };
 

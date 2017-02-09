@@ -77,7 +77,8 @@
       'fessor',
       'sephina',
       'zilla',
-      'kachu'
+      'kachu',
+      'ey McBrosters'
     ];
 
     var getBro = function() {
