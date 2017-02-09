@@ -75,7 +75,9 @@
       'kini',
       'modo Dragon',
       'fessor',
-      'sephina'
+      'sephina',
+      'zilla',
+      'kachu'
     ];
 
     var getBro = function() {
