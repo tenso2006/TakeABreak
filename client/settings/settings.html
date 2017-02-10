@@ -1,7 +1,7 @@
 <div>
   <h3>Settings</h3>
   <div class="container">
-    <form novalidate>
+    <form novalidate ng-submit="superButt(day, startTime, endTime, breakType)">
       <div class="form-group">
         <label for="daySetting">Day</label>
         <select ng-model="day" class="form-control" id="repeatDay">
@@ -35,7 +35,7 @@
         <input type="file" class="form-control-file" id="themeFile" aria-describedby="fileHelp" ng-model="themeFile">
         <small id="fileHelp" class="form-text text-muted">Choose a image or picture to set as backgound image or theme for your app profile.</small>
       </div>
-      <button ng-click="update(day, startTime, endTime, breakType)" type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
   </div>
 
