@@ -97,7 +97,7 @@
     var postSetting = function(day, startTime, endTime, breakType) {
       return $http({
         method: 'POST',
-        url: '/api/settings',
+        url: '/api/users/settings',
         data: {
           day: day,
           startTime: startTime,
