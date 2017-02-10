@@ -31,10 +31,6 @@
         templateUrl: '/home/home.html',
         controller: 'HomeCtrl'
       })
-      .when('/login', {
-        templateUrl: '/login/login.html',
-        controller: 'LoginCtrl'
-      })
       .when('/journey', {
         templateUrl: '/journey/journey.html',
         controller: 'JourneyCtrl'

@@ -7,9 +7,9 @@
       return $http({
         method: 'GET',
         url: '/api/break',
-      }).then(function(Break) {
-        console.log('Here is a break: ', Break.data[0]);
-        return Break.data[0];
+      }).then(function(resp) {
+        // console.log('Here is a break: ', resp.data);
+        return resp.data;
       });
     };
 
@@ -97,7 +97,7 @@
     var postSetting = function(day, startTime, endTime, breakType) {
       return $http({
         method: 'POST',
-        url: '/api/settings',
+        url: '/api/users/settings',
         data: {
           day: day,
           startTime: startTime,

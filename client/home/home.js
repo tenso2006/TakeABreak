@@ -62,11 +62,11 @@
       }
     };
 
-    GetBreak.get().then(function(Break) {
-      console.log('Home.js - Get a Break: ', Break);
-      $scope.break.type = Break.type;
-      $scope.break.title = Break.title;
-      $scope.break.description = Break.description;
+    GetBreak.get().then(function(data) {
+      // console.log('Home.js - Get a Break: ', data);
+      $scope.break.type = data.type;
+      $scope.break.title = data.title;
+      $scope.break.description = data.description;
     });
 
     $scope.completeBreak = function() {
