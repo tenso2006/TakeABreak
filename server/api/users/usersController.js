@@ -60,11 +60,10 @@ const controller = {
 
   postCompletion: function(req, res, next) {
     const type = req.body.type;
-    const query = { email: req.body.email };
-    console.log(query);
-    User.findOne(query)
-    .select('completedTasks')
-    .exec(function(err, data) { console.log('wtf did we get', arguments); res.send(data.completedTasks)})
+    console.log(req.body.email)
+    const date = new Date().toISOString().slice(0,10);
+    User.update({ 'email': req.body.email, 'completedTasks.date': 'blah' }, { $inc: { 'completedTasks.$.reps': 1 }})
+    .then(function() { res.send(arguments); })
       // const date = new Date().toISOString().slice(0,10);
       // let insert = {date: date, reps: 1}
       // User.update(query, { $inc: { completedTasks : insert}}, {safe: true, upsert: true, new: true}, function() {
