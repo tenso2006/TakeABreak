@@ -4,6 +4,7 @@ const mentalBreaks = require('../../db/data/mental.json');
 const physicalBreaks = require('../../db/data/physical.json');
 
 const breakSchema = mongoose.Schema({
+  length: {type: String, required: true},
   type: {type: String, required: true},
   title: {type: String, required: true, unique: true},
   description: {type: String, required: true, unique: true},
