@@ -76,8 +76,22 @@ const controller = {
     User.findOneAndUpdate({email: req.body.email}, {$set: {settings: setting}}, {new: true}, function (err, user) {
       if (err) {
         console.error('error while trying to update setting ', err);
+        res.sendStatus(500);
       }
+      res.sendStatus(201);
       console.log('user setting updated: ', user);
+    });
+  },
+
+  getSetting : function (req, res, next) {
+    const query = User.where({email: req.body.email});
+    query.findOne(function(err, userSetting) {
+      if (err) {
+        console.error('error while getting Settings data ', err);
+        return res.sendStatus(500);
+      }
+      console.log('user setting data is ', userSetting);
+      return res.sendStatus(200);
     });
   }
 };
