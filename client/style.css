@@ -154,9 +154,7 @@ header img, .heading {
 }
 
 video {
-   /*filter: hue-rotate(180deg) saturate(200%);
-   -moz-filter: hue-rotate(180deg) saturate(200%);
-   -webkit-filter: hue-rotate(180deg) saturate(200%);*/
+   margin: 10px;
  }
 
 #local-video {
@@ -167,4 +165,8 @@ video {
 #remote-video {
   max-width: 100%;
   width: 320px;
+}
+
+.form-control {
+  width: 150px;
 }

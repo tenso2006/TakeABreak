@@ -1,16 +1,17 @@
 <div>
   <div id="videoContainer" class="jumbotron">
-    <h2>Break with a Bro</h2>
+    <h2>Zête-à-zête</h2>
     <div id="container">
-      <input class="form-control" type="text" id="room-name" placeholder="Room name"/>
       <video id="local-video" autoplay muted></video>
       <video id="remote-video" autoplay></video>
-      <div>
+      <div >
+        <input class="form-control" type="text" id="room-name" placeholder="Room name"/>
+        <br/>
         <button ng-click="start()" id="start-button">Start</button>
         <button ng-click="join()" id="join-button">Join</button>
         <button ng-click="hangup()" id="hangup-button">Hang Up</button>
       </div>
-
+      <br/>
       <a href="https://webrtc.org/" title="Credits" target="blank">Built with WebRTC</a>
   </div>
 </div>
