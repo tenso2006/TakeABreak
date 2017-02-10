@@ -48,13 +48,13 @@ const controller = {
     User.findOne(query)
     .select('completedTasks')
     .exec(function(err, data) {
-      console.log(data);
       if (err) {
         return res.sendStatus(500);
       } else if (data !== null){
         return res.send(data.completedTasks);
+      } else {
+        return res.status(200).send('No history to display');
       }
-      return res.status(200).send('No history to display')
     });
   },
 
@@ -69,6 +69,10 @@ const controller = {
       // let insert = {date: date, reps: 1}
       // User.update(query, { $inc: { completedTasks : insert}}, {safe: true, upsert: true, new: true}, function() {
       // })
+  },
+
+  postSetting : function (req, res, next) {
+    console.log(req.body);
   }
 };
 

@@ -94,18 +94,21 @@
   });
 
   SERVICES.factory('ZenSetting', function($http) {
-    var setBreak = function(callback) {
+    var postSetting = function(day, startTime, endTime, breakType) {
       return $http({
         method: 'POST',
         url: '/api/settings',
-      }).then(function(Setting) {
-        console.log('Here is a Setting: ', Setting.data[0]);
-        return Setting.data[0];
+        data: {
+          day: day,
+          startTime: startTime,
+          endTime: endTime,
+          breakType: breakType
+        }
       });
     };
 
     return {
-      set: setBreak,
+      postSetting: postSetting,
     };
   });
 
