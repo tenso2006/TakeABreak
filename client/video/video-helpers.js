@@ -12,19 +12,18 @@
   const HELPERS = angular.module('zen.videohelpers', []);
 
   HELPERS.factory('VideoHelpers', function ($location, $window) {
+    const startButton = document.getElementById('startButton');
+    const callButton = document.getElementById('callButton');
+    const hangupButton = document.getElementById('hangupButton');
 
-    var startButton = document.getElementById('startButton');
-    var callButton = document.getElementById('callButton');
-    var hangupButton = document.getElementById('hangupButton');
+    const localVideo = document.getElementById('localVideo');
+    const remoteVideo = document.getElementById('remoteVideo');
+
+    let startTime, localStream, pc1, pc2;
+    let total = '';
 
     callButton.disabled = true;
     hangupButton.disabled = true;
-
-    var startTime;
-    var localVideo = document.getElementById('localVideo');
-    var remoteVideo = document.getElementById('remoteVideo');
-
-    var total = '';
 
     function trace(text) {
       total += text;
@@ -53,9 +52,7 @@
       }
     };
 
-    var localStream;
-    var pc1;
-    var pc2;
+
     var offerOptions = {
       offerToReceiveAudio: 1,
       offerToReceiveVideo: 1

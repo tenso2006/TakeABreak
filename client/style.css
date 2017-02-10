@@ -152,3 +152,19 @@ header img, .heading {
   -webkit-box-shadow: 0 2px 2px 1px rgba(0,0,0,0.2);
   box-shadow: 0 2px 2px 1px rgba(0,0,0,0.2);
 }
+
+video {
+   /*filter: hue-rotate(180deg) saturate(200%);
+   -moz-filter: hue-rotate(180deg) saturate(200%);
+   -webkit-filter: hue-rotate(180deg) saturate(200%);*/
+ }
+
+#local-video {
+  max-width: 100%;
+  width: 320px;
+}
+
+#remote-video {
+  max-width: 100%;
+  width: 320px;
+}
