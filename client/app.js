@@ -7,6 +7,8 @@
     'zen.settings',
     'zen.video',
     'zen.videohelpers',
+    'zen.videomain',
+    'zen.signaling',
     'ngRoute'
   ]);
 
