@@ -22,5 +22,5 @@ router.get('/journey', UsersCtrl.getHistory);
 
 router.post('/', UsersCtrl.addUser);
 router.post('/completion', UsersCtrl.postCompletion);
-
+router.post('/settings', UsersCtrl.postSetting);
 module.exports = router;
