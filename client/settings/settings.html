@@ -1,15 +1,35 @@
 <div>
   <h3>Settings</h3>
-  <div class="container">
-    <select ng-model="selection" ng-options="item for item in mode">
+
+  <div ng-model="viewSetting" class="container">
+    <h4>Current Setting</h4>
+    <button ng-click="showEdit=!showEdit">{{showEdit ? "View Setting" : "Edit Setting"}}</button>
+    <table ng-show="showEdit">
+      <tr>
+        <td>Day</td>
+        <td>Start Time</td>
+        <td>End Time</td>
+        <td>Type of Break</td>
+      </tr>
+      <tr>
+        <td>{{day}}</td>
+        <td>{{startTime}}</td>
+        <td>{{endTime}}</td>
+        <td>{{breakType}}</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="container" ng-show="!showEdit">
+  <select ng-model="selection" ng-options="item for item in mode">
   </select>
   <code>selection={{selection}}</code>
   <hr/>
   <div class="animate-switch-container"
     ng-switch on="selection">
-      <div class="animate-switch" ng-switch-when="settings|options" ng-switch-when-separator="|">Settings Div</div>
-      <div class="animate-switch" ng-switch-when="home">Home Span</div>
-      <div class="animate-switch" ng-switch-default>default</div>
+      <div class="animate-switch" ng-switch-when="edit|options" ng-switch-when-separator="|">Settings Div</div>
+      <div class="animate-switch" ng-switch-when="view">Home Span</div>
+      <!-- <div class="animate-switch" ng-switch-default>default</div> -->
   </div>
     <form novalidate ng-submit="update(day, startTime, endTime, breakType)">
       <div class="form-group">
