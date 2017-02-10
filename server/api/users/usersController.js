@@ -72,6 +72,13 @@ const controller = {
 
   postSetting : function (req, res, next) {
     console.log(req.body);
+    const setting = req.body;
+    User.findOneAndUpdate({email: req.body.email}, {$set: {settings: setting}}, {new: true}, function (err, user) {
+      if (err) {
+        console.error('error while trying to update setting ', err);
+      }
+      console.log('user setting updated: ', user);
+    });
   }
 };
 
