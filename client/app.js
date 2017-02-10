@@ -2,11 +2,11 @@
   const APP = angular.module('zen', [
     'zen.home',
     'zen.journey',
-    'zen.login',
     'zen.services',
     'zen.auth',
     'zen.settings',
     'zen.video',
+    'zen.videohelpers',
     'ngRoute'
   ]);
 
@@ -40,6 +40,10 @@
       .when('/settings', {
         templateUrl: '/settings/settings.html',
         controller: 'SettingsCtrl'
+      })
+      .when('/video', {
+        templateUrl: '/video/video.html',
+        controller: 'VideoCtrl'
       })
       .otherwise({
         redirectTo: '/',
