@@ -1,22 +1,18 @@
-Breaks = require('./breaksModel');
+var Breaks = require('./breaksModel');
+var help = require('./breaksHelpers');
 
 const controller = {
+
   getBreak: function (req, res, next) {
-    const BreakId = randNumGen();
-
-    //TODO: FindAll and then get a random break
-    Breaks.find({_id: BreakId}, function(err, aBreak) {
+    var query = req.params //{length: 'step'} or {length: 'leap'} or {}
+    Breaks.find(query, function(err, breaks) {
       if (err) {
-        console.log('Could Not retrieve a specific Break: ', err);
-        res.sendStatus(500);
+        return res.sendStatus(500);
+      } else {
+        var pickRandom = breaks[help.randNum(breaks.length)]
+        return res.send(pickRandom);
       }
-      res.json(aBreak);
     });
-
-    function randNumGen() {
-      // TODO: change '10' to 'breaks.length'...
-      return Math.floor(Math.random() * 10) + 1;
-    };
   }
 }
 
