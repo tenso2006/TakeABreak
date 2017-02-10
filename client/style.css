@@ -73,6 +73,7 @@ header img, .heading {
 #waves-container {
   background-color: #82ccc8;
   padding: 0;
+  margin-bottom: 50px;
 }
 
 .wave {
@@ -112,10 +113,6 @@ header img, .heading {
 
 #login-splash {
   width: 100%
-}
-
-#videoContainer {
-  margin-bottom: 50px;
 }
 
 .start {

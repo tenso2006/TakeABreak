@@ -1,0 +1,22 @@
+<div>
+  <div id="videoContainer" class="jumbotron">
+    <!-- <button ng-click="startVideo()">Start Video</button> -->
+    <h2>Break with a Bro</h2>
+    <div id="container">
+
+      <video id="localVideo" autoplay muted></video>
+      <video id="remoteVideo" autoplay></video>
+
+      <div>
+        <button ng-click="start()" id="startButton">Start</button>
+        <button ng-click="call()" id="callButton">Call</button>
+        <button ng-click="hangup()" id="hangupButton">Hang Up</button>
+      </div>
+
+      <p>View the console to see logging. The <code>MediaStream</code> object <code>localStream</code>, and the <code>RTCPeerConnection</code> objects <code>pc1</code> and <code>pc2</code> are in global scope, so you can inspect them in the console as well.</p>
+      <a href="https://webrtc.org/" title="Credits" target="blank">Built with WebRTC</a>
+      <br/>
+      <a href="https://github.com/webrtc/samples/tree/gh-pages/src/content/peerconnection/pc1" title="View source for this page on GitHub" id="viewSource" target="blank">View source on GitHub</a>
+    </div>
+  </div>
+</div>

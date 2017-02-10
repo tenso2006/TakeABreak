@@ -1,9 +1,8 @@
 (function() {
   const HOME = angular.module('zen.home', []);
 
-  HOME.controller('HomeCtrl', function($scope, $location, $window, GetBreak, Timer, Video) {
+  HOME.controller('HomeCtrl', function($scope, $location, $window, GetBreak, Timer) {
     $scope.break = {};
-    $scope.startVideo = Video.start;
 
     $scope.masters = {
       options: [

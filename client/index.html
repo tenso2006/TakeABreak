@@ -44,6 +44,7 @@
               <li ng-class="isActive('/')"><a href="#">Home</a></li>
               <li ng-class="isActive('/journey')" ng-show="isAuthorized()"><a href="#/journey">Journey</a></li>
               <li ng-class="isActive('/settings')" ng-show="isAuthorized()"><a href="#/settings">Settings</a></li>
+              <li ng-class="isActive('/video')" ng-show="isAuthorized()"><a href="#/video">Video</a></li>
             </ul>
             <div class="navbar-form navbar-right">
               <div ng-hide="isAuthorized()" class="g-signin2" data-onsuccess="onSignIn"></div>
@@ -73,6 +74,8 @@
     <script src="/journey/journey.js"></script>
     <script src="/login/login.js"></script>
     <script src="/settings/settings.js"></script>
+    <script src="/video/video.js"></script>
+    <script src="/video/video-helpers.js"></script>
 
     <!-- app module -->
     <script src="app.js"></script>
