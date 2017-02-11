@@ -4,12 +4,12 @@
 
   SERVICES.factory('Api', function($http) {
     var getBreak = function(options) {
-      var length = options.length;
-      var type = options.type;
+      var length = options.length.toLowerCase();
+      var type = options.type.toLowerCase();
       console.log(length, type);
       return $http({
         method: 'GET',
-        url: '/api/break?type=',
+        url: `/api/break?type=${type}&length=${length}`,
       }).then(function(resp) {
         // console.log('Here is a break: ', resp.data);
         return resp.data;
@@ -29,8 +29,20 @@
       });
     };
 
+    var getSetting = function () {
+      return $http({
+        method: 'GET',
+        url: '/api/users/settings'
+      })
+      .then(function (settingData) {
+        console.log('Get setting data is :', settingData);
+        return settingData.data;
+      });
+    };
+
     return {
       postSetting: postSetting,
+      getSetting: getSetting,
       getBreak: getBreak
     };
   });
