@@ -25,7 +25,7 @@ Break.resetCount(function(err, nextCount) {
 /*  Un-comment to initialize database */
 Break.create(breaks, function(err, breaks) {
   if (err) {
-    return console.log('whatever');
+    return console.log('dupe key error in breaksModel.js, this is normal');
   }
   // Create Physical Break JSON upload
   // Break.create(physicalBreaks, function(err, breaks) {
