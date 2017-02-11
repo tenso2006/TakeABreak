@@ -73,10 +73,18 @@ const controller = {
     })
   },
 
-  postSetting : function (req, res, next) {
+  postSetting: function (req, res, next) {
     console.log(req.body);
     const setting = req.body;
-    User.findOneAndUpdate({email: req.body.email}, {$set: {settings: setting}}, {new: true}, function (err, user) {
+    User.findOneAndUpdate({
+      email: req.body.email
+    }, {
+      $set: {
+        settings: setting
+      }
+    }, {
+      new: true
+    }, function (err, user) {
       if (err) {
         console.error('error while trying to update setting ', err);
         res.sendStatus(500);
@@ -86,16 +94,21 @@ const controller = {
     });
   },
 
-  getSetting : function (req, res, next) {
-    const query = User.where({email: req.body.email});
+  getSetting: function (req, res, next) {
+    const query = User.where({
+      email: req.body.email
+    });
+
     query.findOne(function(err, userData) {
       if (err) {
         console.error('error while getting Settings data ', err);
         return res.sendStatus(500);
       }
-      console.log('user setting data is ', userData.data);
-      res.json(userData.settings[0]);
-      //return res.sendStatus(200);
+      if (userData) {
+        console.log('user setting data is ', userData.data);
+        res.json(userData.settings[0]);
+        //return res.sendStatus(200);
+      }
     });
   }
 };

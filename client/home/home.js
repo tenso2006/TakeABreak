@@ -1,7 +1,7 @@
 (function() {
   const HOME = angular.module('zen.home', []);
 
-  HOME.controller('HomeCtrl', function($scope, $location, $window, GetBreak, Timer) {
+  HOME.controller('HomeCtrl', function($scope, $location, $window, Api, Timer) {
     $scope.break = {
       onBreak: false
     };
@@ -27,6 +27,7 @@
           pattern: ['Physical', 'Physical', 'Mental', 'Physical']
         }
       ],
+      getPattern: getPattern
     }
     $scope.masters.selected = $scope.masters.options[1];
 
@@ -47,8 +48,13 @@
           pattern: ['Step', 'Leap', 'Step', 'Leap']
         }
       ],
+      getPattern: getPattern
     }
     $scope.focus.selected = $scope.focus.options[0];
+
+    function getPattern() {
+      return this.selected.pattern[$scope.wave.interval];
+    }
 
     $scope.timer = {
       time: $scope.focus.selected.length,
@@ -70,6 +76,7 @@
         if ($scope.timer.time <= 500) {
           $scope.timer.active = false;
           $scope.break.onBreak = true;
+          $scope.getBreak();
           $scope.$apply();
         }
         if ($scope.timer.active) {
@@ -94,12 +101,18 @@
       }
     };
 
-    GetBreak.get().then(function(data) {
-      // console.log('Home.js - Get a Break: ', data);
-      $scope.break.type = data.type;
-      $scope.break.title = data.title;
-      $scope.break.description = data.description;
-    });
+    $scope.getBreak = function() {
+      Api.getBreak({
+        length: $scope.focus.getPattern(), //Step or Leap
+        type: $scope.masters.getPattern()  //Mental or Physical
+      })
+      .then(function(data) {
+        console.log('Home.js - Get a Break: ', data);
+        $scope.break.type = data.type;
+        $scope.break.title = data.title;
+        $scope.break.description = data.description;
+      });
+    }
 
     $scope.completeBreak = function() {
       $scope.timer.reset();
