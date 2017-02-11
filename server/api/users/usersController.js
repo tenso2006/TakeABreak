@@ -61,13 +61,16 @@ const controller = {
   postCompletion: function(req, res, next) {
     const type = req.body.type;
     console.log(req.body.email)
-    const date = new Date().toISOString().slice(0,10);
-    User.update({ 'email': req.body.email, 'completedTasks.date': 'blah' }, { $inc: { 'completedTasks.$.reps': 1 }})
-    .then(function() { res.send(arguments); })
-      // const date = new Date().toISOString().slice(0,10);
-      // let insert = {date: date, reps: 1}
-      // User.update(query, { $inc: { completedTasks : insert}}, {safe: true, upsert: true, new: true}, function() {
-      // })
+    const date = Number(new Date().toISOString().slice(0,10).replace(/-/g,''));
+    User.find({ 'email': req.body.email, 'completedTasks.date': date }, function(err, found) {
+      if (!found[0]) {
+        User.update({ 'email': req.body.email }, { $push: { 'completedTasks' : { 'date': date, 'reps': 1}}})
+        .then( function() { return res.sendStatus(201)});
+      } else {
+        User.update({ 'email': req.body.email, 'completedTasks.date': date }, { $inc: { 'completedTasks.$.reps' : 1}})
+        .then( function() { return res.sendStatus(201)});
+      }
+    })
   },
 
   postSetting : function (req, res, next) {
