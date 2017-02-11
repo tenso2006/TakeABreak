@@ -136,9 +136,7 @@
       $scope.timer.start();
       $.post('api/users/completion', {
         email: JSON.parse($window.localStorage.user).email,
-        type: $scope.break.type },
-        function(resp, status, someObj) {
-        }
+        type: $scope.break.type }
       });
     };
 
