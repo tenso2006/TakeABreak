@@ -110,7 +110,10 @@
         console.log('Home.js - Get a Break: ', data);
         $scope.break.type = data.type;
         $scope.break.title = data.title;
+        $scope.break.audio = data.audio;
+        $scope.break.video = data.video;
         $scope.break.description = data.description;
+
       });
     }
 
