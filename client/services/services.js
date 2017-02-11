@@ -107,8 +107,20 @@
       });
     };
 
+    var getSetting = function () {
+      return $http({
+        method: 'GET',
+        url: '/api/users/settings'
+      })
+      .then(function (settingData) {
+        console.log('Get setting data is :', settingData);
+        return settingData.data;
+      });
+    };
+
     return {
       postSetting: postSetting,
+      getSetting: getSetting
     };
   });
 

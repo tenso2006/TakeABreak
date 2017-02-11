@@ -203,3 +203,7 @@ video {
 .form-control {
   width: 150px;
 }
+
+#startTime, #repeatDay, #endTime, #breakType {
+  width: 40%;
+}
