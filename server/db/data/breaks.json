@@ -2,74 +2,116 @@
   {
     "length": "step",
     "type": "mental",
-    "title": "Breathe",
-    "description": "Take 10 Deep Breaths, hold each breath for 3 seconds!"
-  },
-  {
-    "length": "leap",
-    "type": "mental",
-    "title": "Imagine",
-    "description": "Close your eyes for 10 minutes and envision a place where you want to be or visit."
+    "title": "Breathe deeply.",
+    "description": "Inhale and feel your chest expand. Hold the breath gingerly, like an egg in your hands. Slowly release it back into the world. Repeat. Repeat. Repeat."
   },
   {
     "length": "step",
     "type": "mental",
-    "title": "Vista",
-    "description": "Find the nearest window and take 2 minutes to view the beauty of the world around you."
+    "title": "Close your eyes. Take a journey.",
+    "description": "Where do you want to be? How does it sound? How does it smell? How does it feel? Remember and reflect."
   },
   {
     "length": "step",
     "type": "mental",
-    "title": "Listen",
-    "description": "Listen to https://www.youtube.com/watch?v=m97KHKAo040"
+    "title": "Window.",
+    "description": "All around you is beauty, if you wish to see it. Gaze out the nearest window and choose to see that beauty."
+  },
+  {
+    "length": "step",
+    "type": "mental",
+    "title": "Listen.",
+    "description": "https://www.youtube.com/watch?v=8CnhcGpmH9Y"
   },
   {
     "length": "leap",
     "type": "mental",
-    "title": "Plan",
-    "description": "Take 10 minutes to set a personal goal that you want to achieve this week."
+    "title": "Plan.",
+    "description": "Where have you come from? Where are you going? Recall your joys. Reaffirm your ambitions."
   },
     {
     "length": "leap",
     "type": "physical",
-    "title": "Explore",
-    "description": "Walk for 10 minutes outside!"
+    "title": "Walk.",
+    "description": "Choose to take a walk. Let the sights and sounds sink into your body."
   },
   {
     "length": "step",
     "type": "physical",
-    "title": "Push",
-    "description": "Do 10 pushups or any variation of a pushup!"
-  },
-  {
-    "length": "leap",
-    "type": "physical",
-    "title": "Climb",
-    "description": "Go walk up and down at least 8 flights of stairs!"
+    "title": "Exercise.",
+    "description": "Do 10 pushups. Take a moment to rest. Do 10 pushups. Another rest. 10 more pushups."
   },
   {
     "length": "step",
     "type": "physical",
-    "title": "Jump",
-    "description": "Do as many jumping-jacks as you can for 1 minute!"
+    "title": "Exercise.",
+    "description": "Find stairs and climb them. Go back down. Then climb them again."
+  },
+  {
+    "length": "step",
+    "type": "physical",
+    "title": "Exercise.",
+    "description": "Jumping jacks, one minute. Then a minute's rest. Then another minute of jumping jacks."
   },
   {
     "length": "step",
     "type": "physical",
     "title": "Plank",
-    "description": "Hold a plank for at least 30 seconds! Do this at least 3 times!"
+    "description": "Hold a plank for as long as you can. Then do it again. And again."
+  },
+  {
+    "length": "leap",
+    "type": "mental",
+    "title": "Odd satisfication.",
+    "description": "https://www.youtube.com/watch?v=sCqgCAZ_N2A"
+  },
+  {
+    "length": "leap",
+    "type": "mental",
+    "title": "Ocean waves.",
+    "description": "https://www.youtube.com/watch?v=o3_uZM8NWKc"
+  },
+  {
+    "length": "leap",
+    "type": "mental",
+    "title": "Rain.",
+    "description": "https://www.youtube.com/watch?v=kyUQOrIiPfM"
   },
   {
     "length": "step",
+    "type": "physical",
+    "title": "Plank.",
+    "description": "Hold a plank for at least 30 seconds! Do this at least 3 times!"
+  }
+  {
+    "length": "step",
     "type": "mental",
-    "title": "Deep Breething",
+    "title": "Coffee shop.",
+    "description": "https://www.youtube.com/watch?v=TpdFVSi7PZ8"
+  },
+  {
+    "length": "step",
+    "type": "physical",
+    "title": "Deep Breathing",
     "description": "Inhale deeply with nose, slow till your lungs are filled up, then gently exhale from the mouth"
   },
   {
     "length": "leap",
     "type": "mental",
+    "title": "Ocean sunset.",
+    "description": "https://www.youtube.com/watch?v=bQIFonw98z4"
+  },
+  {
+    "length": "step",
+    "type": "physical",
     "title": "Alternative Nostril Breathing",
     "description": "Close right side of the nostril with thumb, and Inhale deeply with other side of nose, then gently cover the left nosetril with the index finger and release the thumb to exhale from the right nostril. Do this excercise alternatively"
+  },
+  {
+    "length": "step",
+    "type": "physical",
+    "title": "Jump!",
+    "description": "Stand up, and reach as high into the sky as you can. Leap!"
   },
   {
     "length": "step",
@@ -80,12 +122,30 @@
   {
     "length": "step",
     "type": "physical",
+    "title": "Stretch!",
+    "description": "Stand and stretch. Loosen your shoulders. Loosen your back. Slowly, but with purpose."
+  },
+  {
+    "length": "step",
+    "type": "mental",
+    "title": "Be charmed by bewildered dogs.",
+    "description": "https://www.youtube.com/watch?v=VEQXeLjY9akw"
+  },
+  {
+    "length": "step",
+    "type": "physical",
     "title": "sun-salutation",
     "description": "Stand up straight, facing the sun, stand up stright and do sun salutation. these postures are a good way to keep the body in shape and the mind calm and healthy."
   },
   {
     "length": "leap",
     "type": "physical",
+    "title": "A seven-minute high-intensity workout.",
+    "description": "https://www.youtube.com/watch?v=RgXQ7Cqmulg"
+  },
+  {
+    "length": "",
+    "type": "",
     "title": "Brisk walking",
     "description": "Go for a brisk walk, walk fast but do not run."
   },
