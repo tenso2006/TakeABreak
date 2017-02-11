@@ -28,5 +28,35 @@
     "type": "mental",
     "title": "Plan",
     "description": "Take 10 minutes to set a personal goal that you want to achieve this week."
+  },
+    {
+    "length": "leap",
+    "type": "physical",
+    "title": "Explore",
+    "description": "Walk for 10 minutes outside!"
+  },
+  {
+    "length": "step",
+    "type": "physical",
+    "title": "Push",
+    "description": "Do 10 pushups or any variation of a pushup!"
+  },
+  {
+    "length": "leap",
+    "type": "physical",
+    "title": "Climb",
+    "description": "Go walk up and down at least 8 flights of stairs!"
+  },
+  {
+    "length": "step",
+    "type": "physical",
+    "title": "Jump",
+    "description": "Do as many jumping-jacks as you can for 1 minute!"
+  },
+  {
+    "length": "step",
+    "type": "physical",
+    "title": "Plank",
+    "description": "Hold a plank for at least 30 seconds! Do this at least 3 times!"
   }
 ]
