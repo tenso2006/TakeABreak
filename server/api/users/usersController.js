@@ -85,13 +85,14 @@ const controller = {
 
   getSetting : function (req, res, next) {
     const query = User.where({email: req.body.email});
-    query.findOne(function(err, userSetting) {
+    query.findOne(function(err, userData) {
       if (err) {
         console.error('error while getting Settings data ', err);
         return res.sendStatus(500);
       }
-      console.log('user setting data is ', userSetting);
-      return res.sendStatus(200);
+      console.log('user setting data is ', userData.data);
+      res.json(userData.settings[0]);
+      //return res.sendStatus(200);
     });
   }
 };
