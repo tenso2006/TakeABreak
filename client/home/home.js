@@ -120,6 +120,7 @@
     $scope.completeBreak = function() {
       $scope.timer.reset();
       $scope.wave.interval = ($scope.wave.interval + 1) % 4;
+      $scope.timer.start();
       $.post('api/users/completion', { email: JSON.parse($window.localStorage.user).email, type: $scope.break.type }, function(resp, status, someObj) {
         // console.log(resp)
       });
@@ -128,6 +129,7 @@
     $scope.skipBreak = function() {
       $scope.timer.reset();
       $scope.wave.interval = ($scope.wave.interval + 1) % 4;
+      $scope.timer.start();
     };
 
   });
