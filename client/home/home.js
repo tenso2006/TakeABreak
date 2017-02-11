@@ -2,24 +2,53 @@
   const HOME = angular.module('zen.home', []);
 
   HOME.controller('HomeCtrl', function($scope, $location, $window, GetBreak, Timer) {
-    $scope.break = {};
+    $scope.break = {
+      onBreak: false
+    };
 
     $scope.masters = {
       options: [
-        {id: '1', guru: 'Master Mind', text: '...inner-focused'},
-        {id: '2', guru: 'Master Mix', text: '...a nice balance'},
-        {id: '3', guru: 'Master Move', text: '...body-focused'}
+        {
+          id: '1',
+          guru: 'Master Mind',
+          text: 'inner-focused',
+          pattern: ['Mental', 'Mental', 'Physical', 'Mental']
+        },
+        {
+          id: '2',
+          guru: 'Master Mix',
+          text: 'a nice balance',
+          pattern: ['Mental', 'Physical', 'Mental', 'Physical']
+        },
+        {
+          id: '3',
+          guru: 'Master Move',
+          text: 'body-focused',
+          pattern: ['Physical', 'Physical', 'Mental', 'Physical']
+        }
       ],
-      selected: {id: '2', guru: 'Master Mix', text: '...a nice balance'}
     }
+    $scope.masters.selected = $scope.masters.options[1];
 
     $scope.focus = {
       options: [
-        {id: '1', focus: 'blue', text: '25 minutes', length: 1000 * 10 * 1},
-        {id: '2', focus: 'white', text: '50 minutes', length: 1000 * 60 * 50}
+        {
+          id: '1',
+          focus: 'blue',
+          text: '25 minutes',
+          length: 1000 * 2 * 1,
+          pattern: ['Step', 'Step', 'Step', 'Leap'],
+        },
+        {
+          id: '2',
+          focus: 'white',
+          text: '50 minutes',
+          length: 1000 * 60 * 50,
+          pattern: ['Step', 'Leap', 'Step', 'Leap']
+        }
       ],
-      selected: {id: '1', focus: 'blue', text: '25 minutes', length: 1000 * 10 * 1}
     }
+    $scope.focus.selected = $scope.focus.options[0];
 
     $scope.timer = {
       time: $scope.focus.selected.length,
@@ -34,11 +63,14 @@
       },
       reset: function() {
         $scope.timer.pause();
+        $scope.break.onBreak = false;
         $scope.timer.time = $scope.focus.selected.length;
       },
       getTime: function() {
         if ($scope.timer.time <= 500) {
           $scope.timer.active = false;
+          $scope.break.onBreak = true;
+          $scope.$apply();
         }
         if ($scope.timer.active) {
           $scope.timer.time = $scope.timer.endTime - Timer.now();
@@ -54,7 +86,7 @@
 
     $scope.wave = {
       interval: 0,
-      getSource: function(id) {
+      imgSource: function(id) {
         if (id !== $scope.wave.interval) return 'wave.png';
         if ($scope.timer.time < 500) return 'surfer-0.png';
         var interval = Math.ceil(($scope.timer.time) / ($scope.focus.selected.length / 3));
