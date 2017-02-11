@@ -10,7 +10,7 @@ const breakSchema = mongoose.Schema({
   title: {type: String, required: true},
   audio: {type: String},
   video: {type: String},
-  description: {type: String, required: true}
+  description: {type: String}
 });
 
 breakSchema.plugin(autoIncrement.plugin, {

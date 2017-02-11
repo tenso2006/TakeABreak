@@ -37,7 +37,7 @@
     "length": "step",
     "type": "mental",
     "title": "Listen.",
-    "description": "https://www.youtube.com/watch?v=8CnhcGpmH9Y"
+    "video": "https://www.youtube.com/watch?v=8CnhcGpmH9Y"
   },
   {
     "length": "leap",
@@ -79,31 +79,31 @@
     "length": "leap",
     "type": "mental",
     "title": "Odd satisfication.",
-    "description": "https://www.youtube.com/watch?v=sCqgCAZ_N2A"
+    "video": "https://www.youtube.com/watch?v=sCqgCAZ_N2A"
   },
   {
     "length": "leap",
     "type": "mental",
     "title": "Ocean waves.",
-    "description": "https://www.youtube.com/watch?v=o3_uZM8NWKc"
+    "audio": "https://www.youtube.com/watch?v=o3_uZM8NWKc"
   },
   {
     "length": "leap",
     "type": "mental",
     "title": "Rain.",
-    "description": "https://www.youtube.com/watch?v=kyUQOrIiPfM"
+    "audio": "https://www.youtube.com/watch?v=kyUQOrIiPfM"
   },
   {
     "length": "step",
     "type": "physical",
     "title": "Plank.",
     "description": "Hold a plank for at least 30 seconds! Do this at least 3 times!"
-  }
+  },
   {
     "length": "step",
     "type": "mental",
     "title": "Coffee shop.",
-    "description": "https://www.youtube.com/watch?v=TpdFVSi7PZ8"
+    "audio": "https://www.youtube.com/watch?v=TpdFVSi7PZ8"
   },
   {
     "length": "step",
@@ -145,7 +145,7 @@
     "length": "step",
     "type": "mental",
     "title": "Be charmed by bewildered dogs.",
-    "description": "https://www.youtube.com/watch?v=VEQXeLjY9akw"
+    "video": "https://www.youtube.com/watch?v=VEQXeLjY9akw"
   },
   {
     "length": "step",
@@ -156,12 +156,13 @@
   {
     "length": "leap",
     "type": "physical",
-    "title": "A seven-minute high-intensity workout.",
-    "description": "https://www.youtube.com/watch?v=RgXQ7Cqmulg"
+    "title": "High intensity",
+    "video": "https://www.youtube.com/watch?v=RgXQ7Cqmulg",
+    "description": "A seven-minute high-intensity workout."
   },
   {
-    "length": "",
-    "type": "",
+    "length": "leap",
+    "type": "physical",
     "title": "Brisk walking",
     "description": "Go for a brisk walk, walk fast but do not run."
   },
