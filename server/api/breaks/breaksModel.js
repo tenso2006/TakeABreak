@@ -7,8 +7,10 @@ const breaks = require('../../db/data/breaks.json');
 const breakSchema = mongoose.Schema({
   length: {type: String, required: true},
   type: {type: String, required: true},
-  title: {type: String, required: true, unique: true},
-  description: {type: String, required: true, unique: true},
+  title: {type: String, required: true},
+  audio: {type: String},
+  video: {type: String},
+  description: {type: String, required: true}
 });
 
 breakSchema.plugin(autoIncrement.plugin, {
@@ -27,12 +29,6 @@ Break.create(breaks, function(err, breaks) {
   if (err) {
     return console.log('dupe key error in breaksModel.js, this is normal');
   }
-  // Create Physical Break JSON upload
-  // Break.create(physicalBreaks, function(err, breaks) {
-  //   if (err) {
-  //     return console.log(err);
-  //   }
-  // });
 });
 
 module.exports = Break;

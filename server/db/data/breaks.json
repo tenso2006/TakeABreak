@@ -8,6 +8,22 @@
   {
     "length": "step",
     "type": "mental",
+    "title": "Imagine",
+    "audio": "https://www.youtube.com/watch?v=rtwjIOQWiJs",
+    "video": "",
+    "description": "Close your eyes for 10 minutes and envision a place where you want to be or visit."
+  },
+  {
+    "length": "leap",
+    "type": "physical",
+    "title": "Move Your Body with Yoga",
+    "audio": "",
+    "video": "https://www.youtube.com/watch?v=D9q5WsMk4ro",
+    "description": "Ten-minute yoga Flowing Yoga sequence."
+  },
+  {
+    "length": "step",
+    "type": "mental",
     "title": "Close your eyes. Take a journey.",
     "description": "Where do you want to be? How does it sound? How does it smell? How does it feel? Remember and reflect."
   },
