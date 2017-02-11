@@ -2,19 +2,36 @@
 (function() {
   const SERVICES = angular.module('zen.services', []);
 
-  SERVICES.factory('GetBreak', function($http) {
-    var getBreak = function(callback) {
+  SERVICES.factory('Api', function($http) {
+    var getBreak = function(options) {
+      var length = options.length;
+      var type = options.type;
+      console.log(length, type);
       return $http({
         method: 'GET',
-        url: '/api/break',
+        url: '/api/break?type=',
       }).then(function(resp) {
         // console.log('Here is a break: ', resp.data);
         return resp.data;
       });
     };
 
+    var postSetting = function(day, startTime, endTime, breakType) {
+      return $http({
+        method: 'POST',
+        url: '/api/users/settings',
+        data: {
+          day: day,
+          startTime: startTime,
+          endTime: endTime,
+          breakType: breakType
+        }
+      });
+    };
+
     return {
-      get: getBreak,
+      postSetting: postSetting,
+      getBreak: getBreak
     };
   });
 
@@ -22,7 +39,7 @@
     return {
       now: now,
       formatTime: formatTime
-    }
+    };
 
     function now() {
       var date = new Date();
@@ -92,24 +109,4 @@
       brotobase: brotobase
     };
   });
-
-  SERVICES.factory('ZenSetting', function($http) {
-    var postSetting = function(day, startTime, endTime, breakType) {
-      return $http({
-        method: 'POST',
-        url: '/api/users/settings',
-        data: {
-          day: day,
-          startTime: startTime,
-          endTime: endTime,
-          breakType: breakType
-        }
-      });
-    };
-
-    return {
-      postSetting: postSetting,
-    };
-  });
-
 })();

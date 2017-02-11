@@ -1,10 +1,10 @@
 (function() {
   const SETTINGS = angular.module('zen.settings', []);
-  SETTINGS.controller('SettingsCtrl', function($http, $scope, $location, ZenSetting) {
+  SETTINGS.controller('SettingsCtrl', function($http, $scope, $location, Api) {
 
     $scope.superButt = function (day, startTime, endTime, breakType) {
       console.log('UPDATE FIRING');
-      ZenSetting.postSetting(day, startTime, endTime, breakType);
+      Api.postSetting(day, startTime, endTime, breakType);
 
     };
   });
