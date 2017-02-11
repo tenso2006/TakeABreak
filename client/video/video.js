@@ -1,16 +1,9 @@
 (function() {
   const VIDEO = angular.module('zen.video', []);
 
-  VIDEO.controller('VideoCtrl', function($scope, $location, $window, GetBreak, Timer, VideoMain) {
-    $scope.connected = false;
+  VIDEO.controller('VideoCtrl', function($scope, VideoMain) {
     $scope.start = VideoMain.start;
-    $scope.join = function() {
-      VideoMain.join();
-      $scope.connected = true;
-    }
-    $scope.hangup = function() {
-      VideoMain.hangup();
-      $scope.connected = false;
-    }
+    $scope.join = VideoMain.join;
+    $scope.hangup = VideoMain.hangup;
   });
 })();

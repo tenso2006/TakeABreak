@@ -173,6 +173,8 @@ header img, .heading {
 
 video {
   margin: 10px;
+  width: 700px;
+  max-width: 100%;
 }
 
 #video-container {
@@ -184,20 +186,13 @@ video {
   display: inline-block;
 }
 
-#local-video, #remote-video {
-  max-width: 100%;
-}
-
-#remote-video {
-  width: 700px;
-}
-
-.videoNotConnected {
-  width: 700px;
-}
-
-.videoConnected {
+.video-connected {
+  position: absolute;
   width: 200px;
+}
+
+.hidden {
+  display: none;
 }
 
 .form-control {
