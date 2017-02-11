@@ -7,6 +7,9 @@
 #ffcf97 - orangy
 #00ffc9 - green darker
 #baffa0 - green lighter
+
+background: linear-gradient(to left, #ee0979 , #ff6a00);
+background: linear-gradient(rgba(245, 245, 220, 0.98), #82ccc8));
 */
 
 html, body {
@@ -15,6 +18,7 @@ html, body {
 
 body {
   box-sizing: border-box;
+  background-color: rgba(245, 245, 220, 0.4);
 }
 
 h1, h2, h3, h4, p {
@@ -24,9 +28,13 @@ h1, h2, h3, h4, p {
 
 header {
   background-color: #fed587;
-  background: linear-gradient(to bottom right, #fed587, #ffe6b7);
+  background: linear-gradient(#fed587, #fbfbf1);
   padding: 20px 40px;
   text-align: center;
+}
+
+header img {
+  margin-right: 20px;
 }
 
 header img, .heading {
@@ -34,8 +42,8 @@ header img, .heading {
 }
 
 .view-body {
-  height: 80%;
-  background: beige;
+  min-height: 60%;
+  color: #656565;
 }
 
 .heading {
@@ -48,7 +56,7 @@ header img, .heading {
 
 .jumbotron {
   margin-bottom: 0;
-  background: beige;
+  background: none;
 }
 
 .navbar {
@@ -75,16 +83,12 @@ header img, .heading {
   vertical-align: middle;
 }
 
-#home-container {
-  height: 70%;
-}
-
 #timer, #break{
   display: table;
 }
 
 #time, #break {
-  height: 100%;
+  height: 70%;
 }
 
 #timer {
@@ -92,19 +96,25 @@ header img, .heading {
 }
 
 #break {
-  padding: 20px 40px 20px 0;
+  padding: 20px 0;
 }
 
 #time {
-  padding: 20px 20px 0 40px;
+  padding: 20px;
 }
 
 #options * {
   display: inline-block;
 }
 
-#waves-container {
+.page-footer {
+  height: 100px;
+  margin-bottom: 50px;
+}
+
+#waves-container, .page-footer {
   background-color: #82ccc8;
+  background: linear-gradient(#fbfbf1, #82ccc8);
   padding: 0;
   margin-bottom: 50px;
 }
@@ -173,10 +183,11 @@ header img, .heading {
 
 video {
   margin: 10px;
+  width: 700px;
+  max-width: 100%;
 }
 
 #video-container {
-  margin-bottom: 50px;
   padding: 30px;
 }
 
@@ -184,20 +195,13 @@ video {
   display: inline-block;
 }
 
-#local-video, #remote-video {
-  max-width: 100%;
-}
-
-#remote-video {
-  width: 700px;
-}
-
-.videoNotConnected {
-  width: 700px;
-}
-
-.videoConnected {
+.video-connected {
+  position: absolute;
   width: 200px;
+}
+
+.hidden {
+  display: none;
 }
 
 .form-control {

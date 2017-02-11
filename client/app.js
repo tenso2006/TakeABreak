@@ -20,6 +20,9 @@
     $scope.isActive = function(url) {
       return $location.path() === url ? 'active' : '';
     }
+    $scope.isHidden = function() {
+      return $location.path() === '/' ? 'hidden' : 'page-footer';
+    }
     $scope.ghost = function() {
       $scope.user = JSON.parse($window.localStorage.getItem('user'));
     };
