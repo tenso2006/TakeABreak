@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 const autoIncrement = require('mongoose-auto-increment');
-const mentalBreaks = require('../../db/data/mental.json');
-const physicalBreaks = require('../../db/data/physical.json');
+// const mentalBreaks = require('../../db/data/mental.json');
+// const physicalBreaks = require('../../db/data/physical.json');
+const breaks = require('../../db/data/breaks.json');
 
 const breakSchema = mongoose.Schema({
   length: {type: String, required: true},
@@ -22,16 +23,16 @@ Break.resetCount(function(err, nextCount) {
 });
 
 /*  Un-comment to initialize database */
-// Break.create(mentalBreaks, function(err, breaks) {
-//   if (err) {
-//     return console.log(err);
-//   }
-//   // Create Physical Break JSON upload
-//   Break.create(physicalBreaks, function(err, breaks) {
-//     if (err) {
-//       return console.log(err);
-//     }
-//   });
-// });
+Break.create(breaks, function(err, breaks) {
+  if (err) {
+    return console.log('whatever');
+  }
+  // Create Physical Break JSON upload
+  // Break.create(physicalBreaks, function(err, breaks) {
+  //   if (err) {
+  //     return console.log(err);
+  //   }
+  // });
+});
 
 module.exports = Break;
