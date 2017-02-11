@@ -15,7 +15,7 @@ const UsersCtrl = require('./usersController');
 router.get('/', UsersCtrl.getUsers);
 // router.get('/:email', UsersCtrl.getUserByEmail);
 router.get('/journey', UsersCtrl.getHistory);
-
+router.get('/settings', UsersCtrl.getSetting);
 // TODO: Create a route to get UserById!
 // '/api/users/:id - http://mongoosejs.com/docs/api.html#model_Model.findById
 // app.get('/:id', UsersCtrl.getUserById);
@@ -23,4 +23,5 @@ router.get('/journey', UsersCtrl.getHistory);
 router.post('/', UsersCtrl.addUser);
 router.post('/completion', UsersCtrl.postCompletion);
 router.post('/settings', UsersCtrl.postSetting);
+
 module.exports = router;

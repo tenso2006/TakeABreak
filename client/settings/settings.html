@@ -1,7 +1,28 @@
 <div>
-  <h3>Settings</h3>
-  <div class="container">
-    <form novalidate ng-submit="update(day, startTime, endTime, breakType)">
+  <!-- <h3>Settings</h3> -->
+
+  <div ng-model="viewSetting" class="container">
+    <button ng-click="showEdit=!showEdit" class="btn btn-primary">{{showEdit ? "View Setting" : "Edit Setting"}}</button>
+    <table ng-show="!showEdit" ng-model="settingData">
+    <!-- {{settingData}} -->
+      <thead>
+        <td>Day</td>
+        <td>Start Time</td>
+        <td>End Time</td>
+        <td>Type of Break</td>
+      </thead>
+      <tr>
+        <td>{{settingData.day}}</td>
+        <td>{{settingData.startTime}}</td>
+        <td>{{settingData.endTime}}</td>
+        <td>{{settingData.breakType}}</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="container" ng-show="showEdit">
+
+    <form novalidate ng-submit="update(day, startTime, endTime, breakType)" >
       <div class="form-group">
         <label for="daySetting">Day</label>
         <select ng-model="day" class="form-control" id="repeatDay">

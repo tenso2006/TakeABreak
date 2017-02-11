@@ -9,6 +9,10 @@
 #baffa0 - green lighter
 */
 
+html, body {
+  height: 100%;
+}
+
 body {
   box-sizing: border-box;
 }
@@ -27,6 +31,11 @@ header {
 
 header img, .heading {
   display: inline-block;
+}
+
+.view-body {
+  height: 80%;
+  background: beige;
 }
 
 .heading {
@@ -61,9 +70,33 @@ header img, .heading {
   appearance: none;
 }
 
-#guru {
-  text-align: left;
-  /*min-height: 30%;*/
+.centered-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#home-container {
+  height: 70%;
+}
+
+#timer, #break{
+  display: table;
+}
+
+#time, #break {
+  height: 100%;
+}
+
+#timer {
+  height: 60%;
+}
+
+#break {
+  padding: 20px 40px 20px 0;
+}
+
+#time {
+  padding: 20px 20px 0 40px;
 }
 
 #options * {
@@ -82,21 +115,6 @@ header img, .heading {
 
 .wave-large {
   width: 20%;
-}
-
-#home-container {
-}
-
-#time, #break {
-  min-height: 350px;
-}
-
-#break {
-  padding: 20px 40px 20px 0;
-}
-
-#time {
-  padding: 20px 20px 0 40px;
 }
 
 #graph {
@@ -121,9 +139,6 @@ header img, .heading {
 
 .pause {
   color: red;
-}
-
-.g-signin2 {
 }
 
 .clearfix:after {
@@ -153,18 +168,42 @@ header img, .heading {
   box-shadow: 0 2px 2px 1px rgba(0,0,0,0.2);
 }
 
-video {
-   /*filter: hue-rotate(180deg) saturate(200%);
-   -moz-filter: hue-rotate(180deg) saturate(200%);
-   -webkit-filter: hue-rotate(180deg) saturate(200%);*/
- }
 
-#local-video {
+/*   VIDEO   */
+
+video {
+  margin: 10px;
+}
+
+#video-container {
+  margin-bottom: 50px;
+  padding: 30px;
+}
+
+#video-controls > * {
+  display: inline-block;
+}
+
+#local-video, #remote-video {
   max-width: 100%;
-  width: 320px;
 }
 
 #remote-video {
-  max-width: 100%;
-  width: 320px;
+  width: 700px;
+}
+
+.videoNotConnected {
+  width: 700px;
+}
+
+.videoConnected {
+  width: 200px;
+}
+
+.form-control {
+  width: 150px;
+}
+
+#startTime, #repeatDay, #endTime, #breakType {
+  width: 40%;
 }
