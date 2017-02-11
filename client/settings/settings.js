@@ -10,9 +10,12 @@
     $scope.get = function () {
       Api.getSetting().then(function (data) {
         $scope.settingData = data;
-        $timeout(function (){}, 0);
         console.log('settingdata from controller ', $scope.settingData);
       });
     };
+    Api.getSetting().then(function (data) {
+        $scope.settingData = data;
+        console.log('settingdata from controller ', $scope.settingData);
+      });
   });
 })();
