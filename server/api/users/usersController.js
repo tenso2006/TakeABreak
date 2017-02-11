@@ -40,7 +40,7 @@ const controller = {
       } else {
         res.sendStatus(302);
       }
-    })
+    });
   },
 
   getHistory: function(req, res, next) {
@@ -70,12 +70,24 @@ const controller = {
         User.update({ 'email': req.body.email, 'completedTasks.date': date }, { $inc: { 'completedTasks.$.reps' : 1}})
         .then( function() { return res.sendStatus(201)});
       }
-    })
+    });
   },
 
   postSetting: function (req, res, next) {
     console.log(req.body);
-    const setting = req.body;
+    //
+    // let startTime = (new Date(req.body.startTime).getHours() + ':' + ((new Date(req.body.startTime).getMinutes() < 10) ? '0' + new Date(req.body.startTime).getMinutes() : new Date(req.body.startTime).getMinutes()) + new Date(req.body.startTime)).toString();
+    // let endTime = (new Date(req.body.endTime).getHours() + ':' + ((new Date(req.body.endTime).getMinutes() < 10) ? '0' + new Date(req.body.endTime).getMinutes() : new Date(req.body.endTime).getMinutes()) + new Date(req.body.endTime)).toString();
+
+    let setting = {};
+    setting.day = req.body.day;
+    setting.startTime = req.body.startTime;
+    setting.endTime = req.body.endTime;
+    setting.breakType = req.body.breakType;
+
+    //console.log('setting.start time ', setting.startTime);
+    //console.log('start time ', startTime);
+
     User.findOneAndUpdate({
       email: req.body.email
     }, {
@@ -98,7 +110,6 @@ const controller = {
     const query = User.where({
       email: req.body.email
     });
-
     query.findOne(function(err, userData) {
       if (err) {
         console.error('error while getting Settings data ', err);
