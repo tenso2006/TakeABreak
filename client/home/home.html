@@ -1,60 +1,61 @@
 <div>
-  <div id="home-container" class="clearfix">
-    <div id="time" class="jumbotron col-md-4">
-      <div id="guru">
-        <div id="options">
-          <p>Your Zen Guru is: </p>
-          <select
-            name="masters"
-            ng-options="option.guru for option in masters.options track by option.id"
-            ng-model="masters.selected"
-            class="break-select">
-          </select>
-          <br/>
-          <p>You are channelling </p>
-          <select
-            name="focus"
-            ng-options="option.focus for option in focus.options track by option.id"
-            ng-change="timer.reset()"
-            ng-model="focus.selected"
-            class="break-select">
-          </select>
-          <p> focus</p>
+  <div id="home-container">
+    <div id="home" class="jumbotron" >
+      <div id="time" class="centered-cell">
+        <div id="guru">
+          <div id="options">
+            <p>Your Zen Guru is: </p>
+            <select
+              name="masters"
+              ng-options="option.guru for option in masters.options track by option.id"
+              ng-model="masters.selected"
+              class="break-select">
+            </select>
+            <br/>
+            <p>You are channelling </p>
+            <select
+              name="focus"
+              ng-options="option.focus for option in focus.options track by option.id"
+              ng-change="timer.reset()"
+              ng-model="focus.selected"
+              class="break-select">
+            </select>
+            <p> focus</p>
+          </div>
+          <div id="subtext">
+            <p><span class="subtext">({{masters.selected.text}} with a break every {{focus.selected.text}})</span></p>
+          </div>
         </div>
-        <div id="subtext">
-          <p><span class="subtext">({{masters.selected.text}} with a break every {{focus.selected.text}})</span></p>
-        </div>
-      </div>
-      <div id="timer">
-        <div class="centered-cell">
-          <h1>{{timer.displayTime()}}</h1>
-          <div>
-            <button type="submit" class="start btn btn-default" ng-click="timer.start()">Start</button>
-            <button type="submit" class="pause btn btn-default" ng-click="timer.pause()">Pause</button>
-            <button type="submit" class="btn btn-default" ng-click="timer.reset()">Reset</button>
+        <div id="timer">
+          <div class="centered-cell">
+            <h1>{{timer.displayTime()}}</h1>
+            <div>
+              <button type="submit" class="start btn btn-default" ng-click="timer.start()">Start</button>
+              <button type="submit" class="pause btn btn-default" ng-click="timer.pause()">Pause</button>
+              <button type="submit" class="btn btn-default" ng-click="timer.reset()">Reset</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <!--    Take a berak obama section    -->
-    <div id="break" class="jumbotron col-md-8" >
-      <div class="centered-cell" ng-hide="break.onBreak">
-        <!--  Change to Step and Leap -->
-        <p>
-          Up Next:
-          <br/>
-          {{focus.getPattern()}} Toward Enlightenment - {{masters.selected.pattern[wave.interval]}}
-        </p>
-      </div>
-      <div class="centered-cell" ng-show="break.onBreak">
-        <div>
-          <h2>{{break.title}}</h2>
-          <p>{{break.description}}</p>
-          <div ng-show="break.hasVideo()" ng-bind-html="videoSource() | trustedhtml"></div>
+      <div id="break" class="centered-cell">
+        <div class="centered-cell" ng-hide="break.onBreak">
+          <!--  Change to Step and Leap -->
+          <p>
+            Up Next:
+            <br/>
+            {{focus.getPattern()}} Toward Enlightenment - {{masters.selected.pattern[wave.interval]}}
+          </p>
         </div>
-        <div class="btn-group">
-          <a class="btn btn-primary btn-lg" role="button" ng-click="completeBreak()">Complete</a>
-          <a class="btn btn-primary btn-lg" role="button" ng-click="skipBreak()">Skip</a>
+        <div class="centered-cell" ng-show="break.onBreak">
+          <div>
+            <h2>{{break.title}}</h2>
+            <p>{{break.description}}</p>
+            <div ng-show="break.hasVideo()" ng-bind-html="videoSource() | trustedhtml"></div>
+          </div>
+          <div class="btn-group">
+            <a class="btn btn-primary btn-lg" role="button" ng-click="completeBreak()">Complete</a>
+            <a class="btn btn-primary btn-lg" role="button" ng-click="skipBreak()">Skip</a>
+          </div>
         </div>
       </div>
     </div>

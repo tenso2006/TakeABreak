@@ -89,24 +89,18 @@ iframe {
   vertical-align: middle;
 }
 
-#timer, #break{
+#timer, #home-container, #home {
   display: table;
 }
 
-#time, #break {
-  min-height: 50%;
-}
-
-#timer {
-  /*height: 60%;*/
-}
-
 #break {
-  padding: 20px 0;
+  max-width: 700px;
+  min-width: 400px;
 }
 
 #time {
   padding: 20px;
+  width: 400px;
 }
 
 #options * {
