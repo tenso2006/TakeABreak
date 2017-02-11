@@ -28,6 +28,42 @@
     "type": "mental",
     "title": "Plan",
     "description": "Take 10 minutes to set a personal goal that you want to achieve this week."
+  },
+  {
+    "length": "step",
+    "type": "mental",
+    "title": "Lung Breething",
+    "description": "Inhale deeply with nose, slow till your lungs are filled up, then gently exhale from the mouth"
+  },
+  {
+    "length": "leap",
+    "type": "mental",
+    "title": "Alternative Nostril Breathing",
+    "description": "Close right side of the nostril with thumb, and Inhale deeply with other side of nose, then gently cover the left nosetril with the index finger and release the thumb to exhale from the right nostril. Do this excercise alternatively"
+  },
+  {
+    "length": "leap",
+    "type": "mental",
+    "title": "Comedy show",
+    "description": "Watch your favorite comedy show."
+  },
+  {
+    "length": "step",
+    "type": "mental",
+    "title": "single-pointed meditation",
+    "description": "Take any visual object and focus on that for 5 minutes without wandering your thoughts."
+  },
+  {
+    "length": "leap",
+    "type": "mental",
+    "title": "analytical meditation",
+    "description": "Close your eyes and take any subject of your choice, observe your thoughts about that and reason about why you think like that."
+  },
+  {
+    "length": "step",
+    "type": "mental",
+    "title": "talk to loved ones",
+    "description": "Go and talk to your friend who makes you happy."
   }
 ]
 
