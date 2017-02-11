@@ -41,6 +41,8 @@
         localPeerConnection.removeStream(localStream);
         localPeerConnection.close();
         signallingServer.close();
+        localVideo.classList.remove('video-connected');
+        remoteVideo.className = 'hidden';
         localVideo.src = "";
         remoteVideo.src = "";
       }
@@ -179,7 +181,8 @@
 
       // when stream is added to connection, put it in video src
       localPeerConnection.onaddstream = function(data) {
-        console.log('setting remove video source')
+        localVideo.className = 'video-connected';
+        remoteVideo.classList.remove('hidden');
         remoteVideo.src = window.URL.createObjectURL(data.stream);
       }
     }
