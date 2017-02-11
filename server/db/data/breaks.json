@@ -9,7 +9,7 @@
     "length": "step",
     "type": "mental",
     "title": "Imagine",
-    "audio": "https://www.youtube.com/watch?v=rtwjIOQWiJs",
+    "audio": "rtwjIOQWiJs",
     "video": "",
     "description": "Close your eyes for 10 minutes and envision a place where you want to be or visit."
   },
@@ -18,7 +18,7 @@
     "type": "physical",
     "title": "Move Your Body with Yoga",
     "audio": "",
-    "video": "https://www.youtube.com/watch?v=D9q5WsMk4ro",
+    "video": "D9q5WsMk4ro",
     "description": "Ten-minute yoga Flowing Yoga sequence."
   },
   {
@@ -37,7 +37,7 @@
     "length": "step",
     "type": "mental",
     "title": "Listen.",
-    "video": "https://www.youtube.com/watch?v=8CnhcGpmH9Y"
+    "audio": "8CnhcGpmH9Y"
   },
   {
     "length": "leap",
@@ -79,19 +79,19 @@
     "length": "leap",
     "type": "mental",
     "title": "Odd satisfication.",
-    "video": "https://www.youtube.com/watch?v=sCqgCAZ_N2A"
+    "video": "sCqgCAZ_N2A"
   },
   {
     "length": "leap",
     "type": "mental",
     "title": "Ocean waves.",
-    "audio": "https://www.youtube.com/watch?v=o3_uZM8NWKc"
+    "audio": "o3_uZM8NWKc"
   },
   {
     "length": "leap",
     "type": "mental",
     "title": "Rain.",
-    "audio": "https://www.youtube.com/watch?v=kyUQOrIiPfM"
+    "audio": "kyUQOrIiPfM"
   },
   {
     "length": "step",
@@ -103,7 +103,7 @@
     "length": "step",
     "type": "mental",
     "title": "Coffee shop.",
-    "audio": "https://www.youtube.com/watch?v=TpdFVSi7PZ8"
+    "audio": "TpdFVSi7PZ8"
   },
   {
     "length": "step",
@@ -115,7 +115,7 @@
     "length": "leap",
     "type": "mental",
     "title": "Ocean sunset.",
-    "description": "https://www.youtube.com/watch?v=bQIFonw98z4"
+    "description": "bQIFonw98z4"
   },
   {
     "length": "step",
@@ -145,7 +145,7 @@
     "length": "step",
     "type": "mental",
     "title": "Be charmed by bewildered dogs.",
-    "video": "https://www.youtube.com/watch?v=VEQXeLjY9akw"
+    "video": "VEQXeLjY9akw"
   },
   {
     "length": "step",
@@ -157,7 +157,7 @@
     "length": "leap",
     "type": "physical",
     "title": "High intensity",
-    "video": "https://www.youtube.com/watch?v=RgXQ7Cqmulg",
+    "video": "RgXQ7Cqmulg",
     "description": "A seven-minute high-intensity workout."
   },
   {
