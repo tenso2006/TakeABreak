@@ -41,8 +41,14 @@ header img, .heading {
   display: inline-block;
 }
 
+iframe {
+  margin: 10px;
+  width: 500px;
+  max-width: 100%;
+}
+
 .view-body {
-  min-height: 60%;
+  /*min-height: 60%;*/
   color: #656565;
 }
 
@@ -88,11 +94,11 @@ header img, .heading {
 }
 
 #time, #break {
-  height: 70%;
+  min-height: 50%;
 }
 
 #timer {
-  height: 60%;
+  /*height: 60%;*/
 }
 
 #break {
@@ -110,6 +116,9 @@ header img, .heading {
 .page-footer {
   height: 100px;
   margin-bottom: 50px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 #waves-container, .page-footer {

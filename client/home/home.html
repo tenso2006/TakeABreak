@@ -47,9 +47,17 @@
         </p>
       </div>
       <div class="centered-cell" ng-show="break.onBreak">
+<<<<<<< HEAD
         <!-- <h2 ng-model="breakType">{{break.type}}</h2> -->
         <h3>{{break.title}}</h3>
         <p>{{break.description}}</p>
+=======
+        <div>
+          <h2>{{break.title}}</h2>
+          <p>{{break.description}}</p>
+          <div ng-show="break.hasVideo()" ng-bind-html="videoSource() | trustedhtml"></div>
+        </div>
+>>>>>>> Footer styling
         <div class="btn-group">
           <a class="btn btn-primary btn-lg" role="button" ng-click="completeBreak()">Complete</a>
           <a class="btn btn-primary btn-lg" role="button" ng-click="skipBreak()">Skip</a>
