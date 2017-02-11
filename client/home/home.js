@@ -3,8 +3,23 @@
 
   HOME.controller('HomeCtrl', function($scope, $location, $window, Api, Timer) {
     $scope.break = {
-      onBreak: false
+      onBreak: false,
+      type: '',
+      title: '',
+      audio: '',
+      video: '',
+      description: '',
+      hasAudio: function() {
+        return this.audio.length > 0;
+      },
+      hasVideo: function() {
+        return this.video.length > 0;
+      }
     };
+
+    $scope.videoSource = function() {
+      return `<iframe type="text/html" width="640" height="390" src="https://www.youtube.com/embed/${$scope.break.video}" allowFullScreen></iframe>`
+    }
 
     $scope.masters = {
       options: [
@@ -107,13 +122,11 @@
         type: $scope.masters.getPattern()  //Mental or Physical
       })
       .then(function(data) {
-        console.log('Home.js - Get a Break: ', data);
         $scope.break.type = data.type;
         $scope.break.title = data.title;
         $scope.break.audio = data.audio;
         $scope.break.video = data.video;
         $scope.break.description = data.description;
-
       });
     }
 
@@ -121,8 +134,9 @@
       $scope.timer.reset();
       $scope.wave.interval = ($scope.wave.interval + 1) % 4;
       $scope.timer.start();
-      $.post('api/users/completion', { email: JSON.parse($window.localStorage.user).email, type: $scope.break.type }, function(resp, status, someObj) {
-        // console.log(resp)
+      $.post('api/users/completion', {
+        email: JSON.parse($window.localStorage.user).email,
+        type: $scope.break.type }
       });
     };
 
@@ -132,5 +146,9 @@
       $scope.timer.start();
     };
 
+  });
+
+  HOME.filter('trustedhtml', function($sce) {
+    return $sce.trustAsHtml;
   });
 })();

@@ -11,7 +11,6 @@
         method: 'GET',
         url: `/api/break?type=${type}&length=${length}`,
       }).then(function(resp) {
-        // console.log('Here is a break: ', resp.data);
         return resp.data;
       });
     };
