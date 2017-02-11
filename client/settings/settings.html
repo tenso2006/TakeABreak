@@ -1,6 +1,8 @@
 <div class="view-body">
   <div ng-model="viewSetting" class="container">
-    <button ng-click="showEdit=!showEdit" class="btn btn-primary">{{showEdit ? "View Setting" : "Edit Setting"}}</button>
+    <span ng-click="get()">
+      <button ng-click="showEdit=!showEdit" class="btn btn-primary" ng-click="get()">{{showEdit ? "View Setting" : "Edit Setting"}}</button>
+    </span>
     <table ng-show="!showEdit" ng-model="settingData">
       <thead>
         <td>Day</td>
@@ -16,7 +18,6 @@
       </tr>
     </table>
   </div>
-
   <div class="container" ng-show="showEdit">
 
     <form novalidate ng-submit="update(day, startTime, endTime, breakType)" >
