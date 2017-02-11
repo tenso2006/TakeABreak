@@ -1,5 +1,5 @@
 [
-  { 
+  {
     "length": "step",
     "type": "mental",
     "title": "Breathe",
@@ -58,5 +58,71 @@
     "type": "physical",
     "title": "Plank",
     "description": "Hold a plank for at least 30 seconds! Do this at least 3 times!"
+  },
+  {
+    "length": "step",
+    "type": "mental",
+    "title": "Deep Breething",
+    "description": "Inhale deeply with nose, slow till your lungs are filled up, then gently exhale from the mouth"
+  },
+  {
+    "length": "leap",
+    "type": "mental",
+    "title": "Alternative Nostril Breathing",
+    "description": "Close right side of the nostril with thumb, and Inhale deeply with other side of nose, then gently cover the left nosetril with the index finger and release the thumb to exhale from the right nostril. Do this excercise alternatively"
+  },
+  {
+    "length": "step",
+    "type": "physical",
+    "title": "Stand with one leg",
+    "description": "Close your eye and stand with only one leg on the ground"
+  },
+  {
+    "length": "step",
+    "type": "physical",
+    "title": "sun-salutation",
+    "description": "Stand up straight, facing the sun, stand up stright and do sun salutation. these postures are a good way to keep the body in shape and the mind calm and healthy."
+  },
+  {
+    "length": "leap",
+    "type": "physical",
+    "title": "Brisk walking",
+    "description": "Go for a brisk walk, walk fast but do not run."
+  },
+  {
+    "length": "leap",
+    "type": "mental",
+    "title": "Comedy show",
+    "description": "Watch your favorite comedy show."
+  },
+  {
+    "length": "leap",
+    "type": "physical",
+    "title": "Tai Chi",
+    "description": "Do Tai Chi"
+  },
+  {
+    "length": "step",
+    "type": "physical",
+    "title": "Dance",
+    "description": "Dance with your favorite party beats"
+  },
+  {
+    "length": "step",
+    "type": "mental",
+    "title": "single-pointed meditation",
+    "description": "Take any visual object and focus on that for 5 minutes without wandering your thoughts."
+  },
+  {
+    "length": "leap",
+    "type": "mental",
+    "title": "analytical meditation",
+    "description": "Close your eyes and take any subject of your choice, observe your thoughts about that and reason about why you think like that."
+  },
+  {
+    "length": "step",
+    "type": "mental",
+    "title": "talk to loved ones",
+    "description": "Go and talk to your friend who makes you happy."
   }
 ]

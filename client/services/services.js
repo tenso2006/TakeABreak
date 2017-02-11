@@ -114,7 +114,7 @@
     var getBro = function() {
       var randIndex = Math.floor(Math.random() * brotobase.length);
       return brotobase[randIndex];
-    }
+    };
 
     return {
       getBro: getBro,
