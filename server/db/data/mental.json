@@ -9,6 +9,7 @@
     "length": "leap",
     "type": "mental",
     "title": "Imagine",
+    "audio": "https://www.youtube.com/watch?v=rtwjIOQWiJs",
     "description": "Close your eyes for 10 minutes and envision a place where you want to be or visit."
   },
   {
@@ -29,56 +30,34 @@
     "title": "Plan",
     "description": "Take 10 minutes to set a personal goal that you want to achieve this week."
   },
-  {
-    "length": "step",
-    "type": "mental",
-    "title": "Lung Breething",
-    "description": "Inhale deeply with nose, slow till your lungs are filled up, then gently exhale from the mouth"
-  },
-  {
+    {
     "length": "leap",
-    "type": "mental",
-    "title": "Alternative Nostril Breathing",
-    "description": "Close right side of the nostril with thumb, and Inhale deeply with other side of nose, then gently cover the left nosetril with the index finger and release the thumb to exhale from the right nostril. Do this excercise alternatively"
-  },
-  {
-    "length": "leap",
-    "type": "mental",
-    "title": "Comedy show",
-    "description": "Watch your favorite comedy show."
+    "type": "physical",
+    "title": "Explore",
+    "description": "Walk for 10 minutes outside!"
   },
   {
     "length": "step",
-    "type": "mental",
-    "title": "single-pointed meditation",
-    "description": "Take any visual object and focus on that for 5 minutes without wandering your thoughts."
+    "type": "physical",
+    "title": "Push",
+    "description": "Do 10 pushups or any variation of a pushup!"
   },
   {
     "length": "leap",
-    "type": "mental",
-    "title": "analytical meditation",
-    "description": "Close your eyes and take any subject of your choice, observe your thoughts about that and reason about why you think like that."
+    "type": "physical",
+    "title": "Climb",
+    "description": "Go walk up and down at least 8 flights of stairs!"
   },
   {
     "length": "step",
-    "type": "mental",
-    "title": "talk to loved ones",
-    "description": "Go and talk to your friend who makes you happy."
+    "type": "physical",
+    "title": "Jump",
+    "description": "Do as many jumping-jacks as you can for 1 minute!"
+  },
+  {
+    "length": "step",
+    "type": "physical",
+    "title": "Plank",
+    "description": "Hold a plank for at least 30 seconds! Do this at least 3 times!"
   }
 ]
-
-/*
-Long - physical
-https://www.youtube.com/watch?v=D9q5WsMk4ro - yoga routine
-https://www.youtube.com/watch?v=V_ngi5RHP7c - yoga routine
-
-short- phsysical
-
-
-long -mental
-
-
-
-short -mental
-
-*/

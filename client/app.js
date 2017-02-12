@@ -1,6 +1,7 @@
 (function() {
   const APP = angular.module('zen', [
     'zen.home',
+    'zen.homehelpers',
     'zen.journey',
     'zen.services',
     'zen.auth',

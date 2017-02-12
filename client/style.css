@@ -93,6 +93,10 @@ iframe {
   display: table;
 }
 
+#home-container {
+  margin-bottom: 80px;
+}
+
 #break {
   max-width: 700px;
   min-width: 400px;
@@ -107,19 +111,22 @@ iframe {
   display: inline-block;
 }
 
-.page-footer {
-  height: 100px;
-  margin-bottom: 50px;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
-
 #waves-container, .page-footer {
   background-color: #82ccc8;
   background: linear-gradient(#fbfbf1, #82ccc8);
   padding: 0;
+  position: fixed;
+  bottom: 0;
+}
+
+.page-footer {
+  height: 100px;
+  width: 100%;
   margin-bottom: 50px;
+}
+
+#waves-container {
+  margin-bottom: 40px;
 }
 
 .wave {
@@ -144,6 +151,10 @@ iframe {
 
 #login-splash {
   width: 100%
+}
+
+#audio-controls {
+  margin: 20px 0;
 }
 
 .start {

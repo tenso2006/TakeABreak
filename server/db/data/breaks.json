@@ -2,18 +2,18 @@
   {
     "length": "step",
     "type": "mental",
-    "title": "Breathe deeply for three minutes.",
+    "title": "Breathe deeply for three to five minutes.",
     "audio": "",
     "video": "",
     "description": "Inhale and feel your chest expand. Hold the breath gingerly, like an egg in your hands. Slowly release it back into the world. Repeat. Repeat. Repeat."
   },
   {
-    "length": "step",
+    "length": "leap",
     "type": "mental",
     "title": "Imagine",
     "audio": "rtwjIOQWiJs",
     "video": "",
-    "description": "Close your eyes for 10 minutes and envision a place where you want to be or visit."
+    "description": "Ten minutes of constructive mediation. Close your eyes and envision a place where you want visit. Let your mind wander this place."
   },
   {
     "length": "leap",
@@ -21,15 +21,15 @@
     "title": "Move Your Body with Yoga",
     "audio": "",
     "video": "D9q5WsMk4ro",
-    "description": "Ten-minute yoga Flowing Yoga sequence."
+    "description": "Ten-minute Flowing Yoga sequence."
   },
   {
     "length": "step",
     "type": "mental",
     "title": "Close your eyes. Take a journey.",
-    "audio": "",
+    "audio": "ss7EJ-PW2Uk",
     "video": "",
-    "description": "Where do you want to be? How does it sound? How does it smell? How does it feel? Remember and reflect."
+    "description": "Five minutes. Where do you want to be? How does it sound? How does it smell? How does it feel? Remember and reflect."
   },
   {
     "length": "step",
@@ -37,23 +37,15 @@
     "title": "Window.",
     "audio": "",
     "video": "",
-    "description": "All around you is beauty, if you wish to see it. Gaze out the nearest window and choose to see that beauty."
-  },
-  {
-    "length": "step",
-    "type": "mental",
-    "title": "Listen.",
-    "audio": "8CnhcGpmH9Y",
-    "video": "",
-    "description": ""
+    "description": "All around you is beauty, if you wish to see it. Gaze out the nearest window for five minutes and take in that beauty."
   },
   {
     "length": "leap",
     "type": "mental",
     "title": "Plan.",
-    "audio": "",
+    "audio": "vGbRxR03jV8",
     "video": "",
-    "description": "Where have you come from? Where are you going? Recall your joys. Reaffirm your ambitions."
+    "description": "Where have you come from? Where are you going? Spend ten minutes recalling your joys and reaffirming your ambitions."
   },
     {
     "length": "leap",
@@ -66,10 +58,10 @@
   {
     "length": "step",
     "type": "physical",
-    "title": "Exercise.",
+    "title": "Push-ups.",
     "audio": "",
     "video": "",
-    "description": "Do 10 pushups. Take a moment to rest. Do 10 pushups. Another rest. 10 more pushups."
+    "description": "Do 10 pushups. Take a moment to rest. Do 10 pushups. Another rest. Do 10 more pushups."
   },
   {
     "length": "step",
@@ -77,15 +69,7 @@
     "title": "Exercise.",
     "audio": "",
     "video": "",
-    "description": "Find stairs and climb them. Go back down. Then climb them again."
-  },
-  {
-    "length": "step",
-    "type": "physical",
-    "title": "Exercise.",
-    "audio": "",
-    "video": "",
-    "description": "Jumping jacks, one minute. Then a minute's rest. Then another minute of jumping jacks."
+    "description": "Jumping jacks, one minute. Then a minute's rest. Repeat this three times."
   },
   {
     "length": "step",
@@ -93,7 +77,7 @@
     "title": "Plank",
     "audio": "",
     "video": "",
-    "description": "Hold a plank for as long as you can. Then do it again. And again."
+    "description": "Hold a front plank for one minute. Then hold a side plank on each side for 30 seconds."
   },
   {
     "length": "leap",
@@ -101,13 +85,13 @@
     "title": "Odd satisfication.",
     "audio": "",
     "video": "sCqgCAZ_N2A",
-    "description": ""
+    "description": "Treat yourself with a small distraction. Enjoy this oddly-satisfying video."
   },
   {
     "length": "leap",
     "type": "mental",
-    "title": "Ocean waves.",
-    "audio": "o3_uZM8NWKc",
+    "title": "Ocean Waves.",
+    "audio": "50_p7H-OYlk",
     "video": "",
     "description": ""
   },
@@ -117,47 +101,15 @@
     "title": "Rain.",
     "audio": "kyUQOrIiPfM",
     "video": "",
-    "description": ""
-  },
-  {
-    "length": "step",
-    "type": "physical",
-    "title": "Plank.",
-    "audio": "",
-    "video": "",
-    "description": "Hold a plank for at least 30 seconds! Do this at least 3 times!"
-  },
-  {
-    "length": "step",
-    "type": "mental",
-    "title": "Coffee shop.",
-    "audio": "TpdFVSi7PZ8",
-    "video": "",
-    "description": ""
-  },
-  {
-    "length": "step",
-    "type": "physical",
-    "title": "Deep Breathing",
-    "audio": "",
-    "video": "",
-    "description": "Inhale deeply with nose, slow till your lungs are filled up, then gently exhale from the mouth"
+    "description": "Take a break to the sounds of a summer storm."
   },
   {
     "length": "leap",
     "type": "mental",
-    "title": "Ocean sunset.",
+    "title": "Ocean Sunset.",
     "audio": "",
-    "video": "",
-    "description": "bQIFonw98z4"
-  },
-  {
-    "length": "step",
-    "type": "physical",
-    "title": "Alternative Nostril Breathing",
-    "audio": "",
-    "video": "",
-    "description": "Close right side of the nostril with thumb, and Inhale deeply with other side of nose, then gently cover the left nosetril with the index finger and release the thumb to exhale from the right nostril. Do this excercise alternatively"
+    "video": "bQIFonw98z4",
+    "description": ""
   },
   {
     "length": "step",
@@ -165,7 +117,7 @@
     "title": "Jump!",
     "audio": "",
     "video": "",
-    "description": "Stand up, and reach as high into the sky as you can. Leap!"
+    "description": "Stand up, and reach as high into the sky as you can. Bend into a low squat. Leap! Repeat this five times."
   },
   {
     "length": "step",
@@ -178,89 +130,73 @@
   {
     "length": "step",
     "type": "physical",
-    "title": "Stretch!",
+    "title": "Stretch.",
     "audio": "",
     "video": "",
     "description": "Stand and stretch. Loosen your shoulders. Loosen your back. Slowly, but with purpose."
   },
   {
     "length": "step",
-    "type": "mental",
-    "title": "Be charmed by bewildered dogs.",
-    "audio": "",
-    "video": "VEQXeLjY9ak",
-    "description": ""
-  },
-  {
-    "length": "step",
     "type": "physical",
-    "title": "sun-salutation",
+    "title": "Sun-Salutation",
     "audio": "",
     "video": "",
-    "description": "Stand up straight, facing the sun, stand up stright and do sun salutation. these postures are a good way to keep the body in shape and the mind calm and healthy."
+    "description": "Stand up straight, face the sun, and do sun salutation. These postures are good to keep the body and mind calm and healthy."
   },
   {
     "length": "leap",
     "type": "physical",
-    "title": "High intensity",
+    "title": "8 Minute Abs",
     "audio": "",
-    "video": "RgXQ7Cqmulg",
-    "description": "A seven-minute high-intensity workout."
+    "video": "pNqrkGnkUWc",
+    "description": "Sculpt those abs. Only a short time until Spring Break!"
   },
   {
     "length": "leap",
     "type": "physical",
-    "title": "Brisk walking",
+    "title": "Brisk Walk",
     "audio": "",
     "video": "",
-    "description": "Go for a brisk walk, walk fast but do not run."
+    "description": "Go for a brisk walk for ten minutes."
   },
   {
     "length": "leap",
     "type": "mental",
     "title": "Comedy show",
     "audio": "",
-    "video": "",
-    "description": "Watch your favorite comedy show."
+    "video": "4u2ZsoYWwJA",
+    "description": "Laugh with Louis CK."
   },
   {
     "length": "leap",
     "type": "physical",
     "title": "Tai Chi",
     "audio": "",
-    "video": "",
+    "video": "vHBR5MZmEsY",
     "description": "Do Tai Chi"
   },
   {
     "length": "step",
-    "type": "physical",
-    "title": "Dance",
-    "audio": "",
-    "video": "",
-    "description": "Dance with your favorite party beats"
-  },
-  {
-    "length": "step",
     "type": "mental",
-    "title": "single-pointed meditation",
-    "audio": "",
+    "title": "Single-Pointed Meditation",
+    "audio": "mcW7qpPHabY",
     "video": "",
-    "description": "Take any visual object and focus on that for 5 minutes without wandering your thoughts."
+    "description": "Take any visual object and focus on that for 5 minutes. When your thoughts start to wander, refocus on that object."
   },
   {
     "length": "leap",
     "type": "mental",
     "title": "analytical meditation",
-    "audio": "",
+    "audio": "BiqlZZddZEo",
     "video": "",
-    "description": "Close your eyes and take any subject of your choice, observe your thoughts about that and reason about why you think like that."
+    "description": "Close your eyes and take any subject of your choice. Analyze your feelings on this subject. Why you feel how you feel?"
   },
   {
-    "length": "step",
-    "type": "mental",
-    "title": "talk to loved ones",
+    "length": "leap",
+    "type": "physical",
+    "title": "Yoga with Tara Stiles",
     "audio": "",
-    "video": "",
-    "description": "Go and talk to your friend who makes you happy."
+    "video": "V_ngi5RHP7c",
+    "description": ""
   }
 ]
