@@ -1,4 +1,5 @@
-User = require('./usersModel');
+'use strict';
+const User = require('./usersModel');
 
 const controller = {
 
