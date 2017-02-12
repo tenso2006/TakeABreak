@@ -1,96 +1,46 @@
 (function() {
   const HOME = angular.module('zen.home', []);
 
-  HOME.controller('HomeCtrl', function($scope, $location, $window, Api, Timer) {
-    $scope.break = {
-      onBreak: false,
-      type: '',
-      title: '',
-      audio: '',
-      video: '',
-      description: '',
-      hasAudio: function() {
-        return this.audio.length > 0;
-      },
-      hasVideo: function() {
-        return this.video.length > 0;
-      }
-    };
+  HOME.controller('HomeCtrl', function($scope, $location, $window, Api, Timer, Masters, Focus, Break) {
+    $scope.break = Break;
+
+    $scope.masters = Masters;
+    $scope.masters.getPattern = getPattern;
+
+    $scope.focus = Focus;
+    $scope.focus.getPattern = getPattern;
 
     $scope.videoSource = function() {
-      return `<iframe type="text/html" width="640" height="390" src="https://www.youtube.com/embed/${$scope.break.video}" allowFullScreen></iframe>`
-    }
-
-    $scope.masters = {
-      options: [
-        {
-          id: '1',
-          guru: 'Master Mind',
-          text: 'inner-focused',
-          pattern: ['Mental', 'Mental', 'Physical', 'Mental']
-        },
-        {
-          id: '2',
-          guru: 'Master Mix',
-          text: 'a nice balance',
-          pattern: ['Mental', 'Physical', 'Mental', 'Physical']
-        },
-        {
-          id: '3',
-          guru: 'Master Move',
-          text: 'body-focused',
-          pattern: ['Physical', 'Physical', 'Mental', 'Physical']
-        }
-      ],
-      getPattern: getPattern
-    }
-    $scope.masters.selected = $scope.masters.options[1];
-
-    $scope.focus = {
-      options: [
-        {
-          id: '1',
-          focus: 'blue',
-          text: '25 minutes',
-          length: 1000 * 2 * 1,
-          pattern: ['Step', 'Step', 'Step', 'Leap'],
-        },
-        {
-          id: '2',
-          focus: 'white',
-          text: '50 minutes',
-          length: 1000 * 60 * 50,
-          pattern: ['Step', 'Leap', 'Step', 'Leap']
-        }
-      ],
-      getPattern: getPattern
-    }
-    $scope.focus.selected = $scope.focus.options[0];
-
-    function getPattern() {
-      return this.selected.pattern[$scope.wave.interval];
+      return `<iframe id="youtube" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/${youtubeURL()}?enablejsapi=1" allowFullScreen></iframe>`
     }
 
     $scope.timer = {
       time: $scope.focus.selected.length,
       endTime: 0,
       start: function() {
-        $scope.timer.endTime = Timer.now() + $scope.timer.time;
-        $scope.timer.active = true;
-        setTimeout($scope.timer.getTime, 500);
+        if ($scope.timer.time > 500) {
+          $scope.timer.endTime = Timer.now() + $scope.timer.time;
+          $scope.timer.active = true;
+          toggleDisabled('timer-pause', false);
+          toggleDisabled('timer-start', true);
+          setTimeout($scope.timer.getTime, 500);
+        }
       },
       pause: function() {
         $scope.timer.active = false;
+        toggleDisabled('timer-pause', true);
+        toggleDisabled('timer-start', false);
       },
       reset: function() {
         $scope.timer.pause();
         $scope.break.onBreak = false;
+        toggleDisabled('timer-start', false);
         $scope.timer.time = $scope.focus.selected.length;
       },
       getTime: function() {
         if ($scope.timer.time <= 500) {
           $scope.timer.active = false;
-          $scope.break.onBreak = true;
+          toggleDisabled('timer-pause', true);
           $scope.getBreak();
           $scope.$apply();
         }
@@ -127,13 +77,15 @@
         $scope.break.audio = data.audio;
         $scope.break.video = data.video;
         $scope.break.description = data.description;
+        $scope.break.onBreak = true;
       });
     }
 
     $scope.completeBreak = function() {
       $scope.timer.reset();
-      $scope.wave.interval = ($scope.wave.interval + 1) % 4;
       $scope.timer.start();
+      $scope.toggleAudio('pause');
+      $scope.wave.interval = ($scope.wave.interval + 1) % 4;
       $.post('api/users/completion', {
         email: JSON.parse($window.localStorage.user).email,
         type: $scope.break.type
@@ -146,6 +98,23 @@
       $scope.timer.start();
     };
 
+    $scope.toggleAudio = function(command) {
+      toggleDisabled('audio-play', command === 'play');
+      toggleDisabled('audio-pause', command === 'pause');
+      $('#youtube')[0].contentWindow.postMessage('{"event":"command","func":"' + command + 'Video","args":""}', '*');
+    };
+
+    function getPattern() {
+      return this.selected.pattern[$scope.wave.interval];
+    }
+
+    function youtubeURL() {
+      return $scope.break.hasAudio() ? $scope.break.audio : $scope.break.video;
+    }
+
+    function toggleDisabled(id, bool) {
+      document.getElementById(id).disabled = bool;
+    }
   });
 
   HOME.filter('trustedhtml', function($sce) {

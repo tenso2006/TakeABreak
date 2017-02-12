@@ -6,7 +6,6 @@
     var getBreak = function(options) {
       var length = options.length.toLowerCase();
       var type = options.type.toLowerCase();
-      console.log(length, type);
       return $http({
         method: 'GET',
         url: `/api/break?type=${type}&length=${length}`,
@@ -44,28 +43,6 @@
       getSetting: getSetting,
       getBreak: getBreak
     };
-  });
-
-  SERVICES.factory('Timer', function() {
-    return {
-      now: now,
-      formatTime: formatTime
-    };
-
-    function now() {
-      var date = new Date();
-      return date.getTime();
-    }
-
-    function formatTime(milliseconds) {
-      var minutes = Math.floor(milliseconds / (1000 * 60));
-      var seconds = Math.round((milliseconds % (1000 * 60) / 1000), 0);
-      return pad(minutes) + ':' + pad(seconds);
-    }
-
-    function pad(num) {
-      return num.toString().length > 1 ? num : '0'.concat(String(num));
-    }
   });
 
   SERVICES.factory('BroFactory', function() {

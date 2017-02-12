@@ -30,8 +30,8 @@
           <div class="centered-cell">
             <h1>{{timer.displayTime()}}</h1>
             <div>
-              <button type="submit" class="start btn btn-default" ng-click="timer.start()">Start</button>
-              <button type="submit" class="pause btn btn-default" ng-click="timer.pause()">Pause</button>
+              <button type="submit" class="start btn btn-default" ng-click="timer.start()" id="timer-start">Start</button>
+              <button type="submit" class="pause btn btn-default" ng-click="timer.pause()" id="timer-pause" disabled>Pause</button>
               <button type="submit" class="btn btn-default" ng-click="timer.reset()">Reset</button>
             </div>
           </div>
@@ -39,7 +39,6 @@
       </div>
       <div id="break" class="centered-cell">
         <div class="centered-cell" ng-hide="break.onBreak">
-          <!--  Change to Step and Leap -->
           <p>
             Up Next:
             <br/>
@@ -50,7 +49,14 @@
           <div>
             <h2>{{break.title}}</h2>
             <p>{{break.description}}</p>
+            <button class="btn btn-default" ng-click="" id="begin-break">Begin</button>
             <div ng-show="break.hasVideo()" ng-bind-html="videoSource() | trustedhtml"></div>
+            <div id="audio-controls" ng-show="break.hasAudio()">
+              <div class="btn-group">
+                <button class="start btn btn-default" ng-click="toggleAudio('play')" id="audio-play">Play Audio</button>
+                <button class="pause btn btn-default" ng-click="toggleAudio('pause')" id="audio-pause" disabled>Pause Audio</button>
+              </div>
+            </div>
           </div>
           <div class="btn-group">
             <a class="btn btn-primary btn-lg" role="button" ng-click="completeBreak()">Complete</a>
